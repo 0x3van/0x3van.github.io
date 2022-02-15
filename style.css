@@ -5,6 +5,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  background-image: url('https://cdn.dribbble.com/users/14275/screenshots/2751654/dribbble-particle-wave.gif');
   background-color: black;
   color: #fff;
 }
