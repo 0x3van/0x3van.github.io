@@ -14,6 +14,16 @@ html, body {
   color: #fff;
 }
 
+h1 {
+    font-size: 45px;
+    background: -webkit-linear-gradient(0deg, #37B1DA, #C948CD, #d6e194);
+    background-size: 150% 150%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    animation: change 5s ease-in-out infinite;
+}
+
 #content {
   position: absolute;
   left: 50%;
