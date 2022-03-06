@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from greenman.gq/files/metatablestut.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Mar 2022 11:08:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metatables Tutorial | Greenman</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Dark Mode Tweaks */
+    body {
+        background-color: #252525;
+        color: hsla(0, 0%, 100%, 0.75);
+    }
+
+    pre > code {
+        background-color: rgba(0,0,0,.05);
+    }
+  </style>
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#metatables-tutorial">Metatables Tutorial</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#index">__index</a></li>
+<li><a href="#newindex">__newindex</a></li>
+<li><a href="#call">__call</a></li>
+<li><a href="#concat">__concat</a></li>
+<li><a href="#len">__len</a></li>
+<li><a href="#metatable">__metatable</a></li>
+<li><a href="#arithmetic-metamethods">Arithmetic Metamethods</a></li>
+<li><a href="#relational-metamethods">Relational Metamethods</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="metatables-tutorial">Metatables Tutorial</h1>
+<p>Written by Greenman</p>
+<h2 id="introduction">Introduction</h2>
+<p>Let’s start by defining some terms:</p>
+<ul>
+<li>metatable (n) - a table attached to another table containing metamethods</li>
+<li>metamethod (n) - a function with a specific name that modifies or defines the behavior of certain aspects of a table</li>
+</ul>
+<p>Metamethods always have two underscores <code>__</code> in their name and the name of the metamethod tells you what it does.</p>
+<p>Let’s start by setting up a metatable:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+</code></pre>
+<p>The above example doesn’t do much, but it does demonstrate the usage of <code>setmetatable</code> which is a global function that attaches metatables to tables.</p>
+<p>Here’s the documentation for the function:</p>
+<pre class=" language-lua"><code class="prism  language-lua">table <span class="token function">setmetatable</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>table<span class="token operator">&gt;</span> t<span class="token punctuation">,</span> <span class="token operator">&lt;</span>table<span class="token operator">&gt;</span> metatable<span class="token punctuation">)</span>
+</code></pre>
+<p>The first argument is returned by the function. Now that we know how to set a metatable, let’s try adding a metamethod.</p>
+<p>I’m going to start with a simple one called <code>__index</code>:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __index <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">"Attempted to access "</span><span class="token operator">..</span>k
+  <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; nil</span>
+
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>mt<span class="token punctuation">)</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 10</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; Attempt to access 5</span>
+</code></pre>
+<p>On line 7, we see this:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; nil</span>
+</code></pre>
+<p>This is the expected result of indexing a table with an index that has no value.</p>
+<p>After the line where we call <code>setmetatable</code>, the behavior changes:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 10</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; Attempt to access 5</span>
+</code></pre>
+<p>Note: The first line shown above is to show you that indexing the table with indices where there are values is still the same.</p>
+<p>So, what can we conclude from this example?</p>
+<ol>
+<li>Metamethods are called when specific events happen to the table</li>
+<li>The purpose of metatables/metamethods is to change the behavior of tables</li>
+<li><code>__index</code> is called when you access an index with no value (also called a <code>nil</code> value)</li>
+</ol>
+<p>One thing I should mention is the <strong>arguments</strong> the metamethod recieves. Let’s focus on our metamethod definition:</p>
+<pre class=" language-lua"><code class="prism  language-lua">__index <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token string">"Attempted to access "</span><span class="token operator">..</span>k
+<span class="token keyword">end</span>
+</code></pre>
+<p><code>__index</code> is getting <em>t</em> which is the table being indexed and <em>k</em> which is the index or key accessed on the table.</p>
+<p>If we did:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Assuming that index 9 has no value and we attached a metatable with <code>__index</code> in it, the metamethod would recieve these arguments:</p>
+<ol>
+<li><code>t</code> (the table we defined)</li>
+<li><code>9</code> (the index we tried to access)</li>
+</ol>
+<h2 id="index"><code>__index</code></h2>
+<p>If you remember from the previous section, <code>__index</code> is a metamethod that is triggered when you <strong>access an index with a nil value in a table</strong>.</p>
+<p>The arguments the metamethod receives are:</p>
+<ol>
+<li><code>&lt;table&gt; table</code> - The table being indexed</li>
+<li><code>&lt;string, int&gt; key</code> - The key/index being accessed</li>
+</ol>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __index <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> k
+  <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; nil</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 9</span>
+</code></pre>
+<h3 id="index-with-a-table"><code>__index</code> With A Table</h3>
+<p>One thing that is unique about the <code>__index</code> metamethod is that you can assign a table instead of a function. In doing so, that table will be accessed when you access a nil value.</p>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> 
+  y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> 
+  z <span class="token operator">=</span> <span class="token number">30</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __index <span class="token operator">=</span> <span class="token punctuation">{</span>a <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>mt<span class="token punctuation">)</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">--&gt; 99</span>
+</code></pre>
+<h3 id="index-chain"><code>__index</code> Chain</h3>
+<p>One interesting thing about <code>__index</code> with a table is that you can give the table assigned to <code>__index</code> a metatable with <code>__index</code> assigned to another table so if the value is not found in the first backup table, the next table will be searched.</p>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  z <span class="token operator">=</span> <span class="token number">30</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __index <span class="token operator">=</span> <span class="token function">setmetatable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>a <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span> <span class="token comment">-- {a = 99} is returned</span>
+    __index <span class="token operator">=</span> <span class="token punctuation">{</span>b <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>mt<span class="token punctuation">)</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">--&gt; 99</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>b<span class="token punctuation">)</span> <span class="token comment">--&gt; 25</span>
+</code></pre>
+<h3 id="rawget">rawget</h3>
+<p>Lua has a global function called <code>rawget</code> which allows you to index a table <strong>without</strong> triggering <code>__index</code> if the value is nil.</p>
+<p>Documentation:</p>
+<pre class=" language-lua"><code class="prism  language-lua">any <span class="token function">rawget</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>table<span class="token operator">&gt;</span> t<span class="token punctuation">,</span> <span class="token operator">&lt;</span>int<span class="token operator">&gt;</span> index<span class="token punctuation">)</span>
+</code></pre>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __index <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> k
+  <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 9</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">rawget</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">--&gt; nil</span>
+</code></pre>
+<h2 id="newindex"><code>__newindex</code></h2>
+<p><code>__newindex</code> is a metamethod that is triggered when you assign an index a value which was <code>nil</code> when the table was created.</p>
+<p>The arguments the metamethod receives are:</p>
+<ol>
+<li><code>&lt;table&gt; table</code> - The table receiving a new value</li>
+<li><code>&lt;string, int&gt; key</code> - The key being assigned a value</li>
+<li><code>&lt;any&gt; value</code> - The value assigned to the key</li>
+</ol>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __newindex <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+    <span class="token function">rawset</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> v<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+
+t<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 10</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+t<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 100</span>
+t<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">40</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">--&gt; 80</span>
+</code></pre>
+<p>In the above example, there’s two things to notice:</p>
+<ol>
+<li>The first assignment after the call to <code>setmetatable</code> will not invoke <code>__newindex</code> because index 3 was not originally <code>nil</code> and had a value</li>
+<li>The <code>__newindex</code> metamethod uses <code>rawset</code> instead of assigning the value with the usual syntax <code>t[k] = v*2</code> to prevent a stack overflow</li>
+</ol>
+<p>If we didn’t use <code>rawset</code>, this is what would happen:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+  __newindex <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+    t<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token operator">*</span><span class="token number">2</span>
+  <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+t<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">40</span>
+<span class="token function">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Output:</p>
+<pre><code>lua: script.lua:5: C stack overflow  
+stack traceback:  
+	script.lua:5: in function &lt;script.lua:4&gt;  
+	...
+	script.lua:10: in main chunk  
+	[C]: ?
+</code></pre>
+<p>We are invoking <code>__newindex</code> inside the metamethod which results in the metamethod being infinitely invoked. This produces a stack overflow because the space needed to store the variables and information associated with each call (to the metamethod) is more than can fit on the stack.</p>
+<h2 id="call"><code>__call</code></h2>
+<p><code>__call</code> is a metamethod that is invoked when you try to call a table like a function.</p>
+<p>The arguments the metamethod recieves are:<br>
+<code>&lt;table&gt; table</code> - The table being called<br>
+<code>&lt;any&gt; ...</code> - The values passed to the function call</p>
+<p>Normally, you can’t call a table without producing an error:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token function">t</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Output:</p>
+<pre><code>lua: script.lua:2: attempt to call local 't' (a table value)  
+stack traceback:  
+	script.lua:2: in main chunk  
+	[C]: ?
+</code></pre>
+<p>But with <code>__call</code>, you can:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __call <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+	<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">do</span>
+	     <span class="token function">print</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+	<span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token function">t</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">-- 1 10</span>
+<span class="token comment">-- 2 20</span>
+<span class="token comment">-- 3 30</span>
+</code></pre>
+<p>You can also accept and use arguments when working with <code>__call</code>:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __call <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+	<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">do</span>
+	    t<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token operator">*</span>n
+	<span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token function">t</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token comment">-- 1 100</span>
+<span class="token comment">-- 2 200</span>
+<span class="token comment">-- 3 300</span>
+</code></pre>
+<p>If you want to accept any amount of arguments, you can use <code>...</code> and store the <code>...</code> in a table so you can handle it:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __call <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> <span class="token punctuation">...</span><span class="token punctuation">)</span>
+	<span class="token keyword">local</span> args <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token punctuation">}</span>
+	<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span> <span class="token keyword">do</span>
+	    table<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+	<span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token function">t</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token comment">-- 1 10</span>
+<span class="token comment">-- 2 20</span>
+<span class="token comment">-- 3 30</span>
+<span class="token comment">-- 4 40</span>
+<span class="token comment">-- 5 50</span>
+<span class="token comment">-- 6 60</span>
+<span class="token comment">-- 7 70</span>
+</code></pre>
+<h2 id="concat"><code>__concat</code></h2>
+<p><code>__concat</code> is a metamethod that is invoked when you concatenate a table to another table using the <code>..</code> operator.</p>
+<p>The arguments the metamethod receives are:<br>
+<code>&lt;table&gt; table</code> - The table being concatenated<br>
+<code>&lt;any&gt; value</code> - The second value in the concatenation expression</p>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __concat <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> val<span class="token punctuation">)</span>
+	<span class="token keyword">local</span> copy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">do</span>
+	    table<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>copy<span class="token punctuation">,</span> v<span class="token operator">..</span>val<span class="token punctuation">)</span>
+	<span class="token keyword">end</span>
+	<span class="token keyword">return</span> copy
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> t2 <span class="token operator">=</span> t <span class="token operator">..</span> <span class="token string">'1'</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token comment">-- 1 a1</span>
+<span class="token comment">-- 2 b1</span>
+<span class="token comment">-- 3 c1</span>
+</code></pre>
+<p>Example 2:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> t2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __concat <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+        <span class="token keyword">local</span> copy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">do</span>
+	    table<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>copy<span class="token punctuation">,</span> v<span class="token operator">..</span>t2<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+        <span class="token keyword">return</span> copy
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> t3 <span class="token operator">=</span> t <span class="token operator">..</span> t2
+<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>t3<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token comment">-- 1 a1</span>
+<span class="token comment">-- 2 b2</span>
+<span class="token comment">-- 3 c3</span>
+</code></pre>
+<h2 id="len"><code>__len</code></h2>
+<p><code>__len</code> is a metamethod that is invoked when you use the length operator <code>#</code> on a table.</p>
+<p>The arguments the metamethod receives are:<br>
+<code>&lt;table&gt; table</code> - The table the <code>#</code> operator is used on</p>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __len <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">#</span>t<span class="token punctuation">)</span> <span class="token comment">--&gt; 0</span>
+</code></pre>
+<h2 id="metatable"><code>__metatable</code></h2>
+<p><code>__metatable</code> is a metamethod that is invoked when <code>getmetatable</code> is used on a table.</p>
+<p>The arguments the metamethod receives are:<br>
+<code>&lt;table&gt; table</code> - The table <code>getmetatable</code> is called on</p>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> t <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __metatable <span class="token operator">=</span> <span class="token string">'The metatable is locked'</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">getmetatable</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">--&gt; The metatable is locked</span>
+</code></pre>
+<p>Keep in mind that it’s still possible to get the metatable without invoking <code>__metatable</code> by using <code>debug.getmetatable</code>.</p>
+<h2 id="arithmetic-metamethods">Arithmetic Metamethods</h2>
+<p>The arithmetic metamethods are invoked when the operator they are named after is used on the table.<br>
+These are all the arithmetic metamethods:<br>
+<code>__add</code> - Invoked when <code>+</code> is used<br>
+<code>__sub</code> - Invoked when <code>-</code> is used<br>
+<code>__mul</code> - Invoked when <code>*</code> is used<br>
+<code>__div</code>- Invoked when <code>/</code> is used<br>
+<code>__mod</code> - Invoked when <code>%</code> is used<br>
+<code>__pow</code> - Invoked when <code>^</code> is used<br>
+<code>__unm</code> - Invoked when <code>-</code> is used to represent negative</p>
+<p>The arguments all the arithmetic metamethods receive (except <code>__unm</code>) are:<br>
+<code>&lt;table&gt; table</code> - The table the operation is being performed on<br>
+<code>&lt;any&gt; value</code> - The second value in the expression</p>
+<p>Let’s say we had a table which stored x, y, and z components and we had other tables which fit the same description and we wanted to perform operations. We could use these metamethods for that:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> vec <span class="token operator">=</span> <span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> vec2 <span class="token operator">=</span> <span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">46</span><span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+__add <span class="token operator">=</span>  <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> copy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    copy<span class="token punctuation">.</span>x  <span class="token operator">=</span> t<span class="token punctuation">.</span>x <span class="token operator">+</span> t2<span class="token punctuation">.</span>x
+    copy<span class="token punctuation">.</span>y  <span class="token operator">=</span> t<span class="token punctuation">.</span>y <span class="token operator">+</span> t2<span class="token punctuation">.</span>y
+    copy<span class="token punctuation">.</span>z  <span class="token operator">=</span> t<span class="token punctuation">.</span>z <span class="token operator">+</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">return</span> copy
+<span class="token keyword">end</span><span class="token punctuation">,</span>
+__sub <span class="token operator">=</span>  <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> copy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    copy<span class="token punctuation">.</span>x  <span class="token operator">=</span> t<span class="token punctuation">.</span>x <span class="token operator">-</span> t2<span class="token punctuation">.</span>x
+    copy<span class="token punctuation">.</span>y  <span class="token operator">=</span> t<span class="token punctuation">.</span>y <span class="token operator">-</span> t2<span class="token punctuation">.</span>y
+    copy<span class="token punctuation">.</span>z  <span class="token operator">=</span> t<span class="token punctuation">.</span>z <span class="token operator">-</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">return</span> copy
+<span class="token keyword">end</span><span class="token punctuation">,</span>
+__mul <span class="token operator">=</span>  <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> copy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    copy<span class="token punctuation">.</span>x  <span class="token operator">=</span> t<span class="token punctuation">.</span>x <span class="token operator">*</span> t2<span class="token punctuation">.</span>x
+    copy<span class="token punctuation">.</span>y  <span class="token operator">=</span> t<span class="token punctuation">.</span>y <span class="token operator">*</span> t2<span class="token punctuation">.</span>y
+    copy<span class="token punctuation">.</span>z  <span class="token operator">=</span> t<span class="token punctuation">.</span>z <span class="token operator">*</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">return</span> copy
+<span class="token keyword">end</span><span class="token punctuation">,</span>
+__div <span class="token operator">=</span>  <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> copy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    copy<span class="token punctuation">.</span>x  <span class="token operator">=</span> t<span class="token punctuation">.</span>x <span class="token operator">/</span> t2<span class="token punctuation">.</span>x
+    copy<span class="token punctuation">.</span>y  <span class="token operator">=</span> t<span class="token punctuation">.</span>y <span class="token operator">/</span> t2<span class="token punctuation">.</span>y
+    copy<span class="token punctuation">.</span>z  <span class="token operator">=</span> t<span class="token punctuation">.</span>z <span class="token operator">/</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">return</span> copy
+<span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">outputVector</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>x<span class="token operator">..</span><span class="token string">', '</span><span class="token operator">..</span>v<span class="token punctuation">.</span>y<span class="token operator">..</span><span class="token string">', '</span><span class="token operator">..</span>v<span class="token punctuation">.</span>z<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token function">outputVector</span><span class="token punctuation">(</span>vec <span class="token operator">+</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; 40, 66, 62</span>
+<span class="token function">outputVector</span><span class="token punctuation">(</span>vec <span class="token operator">-</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; -20, -26, -2</span>
+<span class="token function">outputVector</span><span class="token punctuation">(</span>vec <span class="token operator">*</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; 300, 920, 960</span>
+<span class="token function">outputVector</span><span class="token punctuation">(</span>vec <span class="token operator">/</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; 0.33333333333333, 0.43478260869565, 0.9375</span>
+</code></pre>
+<p>The arguments the <code>__unm</code> metamethods receives are:<br>
+<code>&lt;table&gt; table</code> - The table the operation is being performed on</p>
+<p>Example:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> vec <span class="token operator">=</span> <span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __unm <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token operator">-</span>t<span class="token punctuation">.</span>x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token operator">-</span>t<span class="token punctuation">.</span>y<span class="token punctuation">,</span>z <span class="token operator">=</span> <span class="token operator">-</span>t<span class="token punctuation">.</span>z<span class="token punctuation">}</span>
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+<span class="token function">setmetatable</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">outputVector</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>x<span class="token operator">..</span><span class="token string">', '</span><span class="token operator">..</span>v<span class="token punctuation">.</span>y<span class="token operator">..</span><span class="token string">', '</span><span class="token operator">..</span>v<span class="token punctuation">.</span>z<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token function">outputVector</span><span class="token punctuation">(</span><span class="token operator">-</span>vec<span class="token punctuation">)</span> <span class="token comment">--&gt; -10, -20, -30</span>
+</code></pre>
+<h2 id="relational-metamethods">Relational Metamethods</h2>
+<p>The relational metamethods are invoked when relational operators are used with two tables.<br>
+These are all the relational metamethods:<br>
+<code>__eq</code> - Invoked when <code>==</code> is used<br>
+<code>__lt</code> - Invoked when <code>&lt;</code> is used<br>
+<code>__le</code> - Invoked when <code>&lt;=</code> is used</p>
+<p>You might notice that the not equal <code>~=</code>, greater than <code>&gt;</code>, and greater than or equal to <code>&gt;=</code> operators don’t have their own metamethods, but that’s because the metamethods are also invoked for their inverse operations (but the operations are treated differently).</p>
+<p><code>_eq</code> - <code>a ~= b</code> is treated as <code>not (a == b)</code><br>
+<code>__lt</code> - <code>a &gt; b</code> is treated as <code>b &lt; a</code><br>
+<code>__le</code> - <code>a &gt;= b</code> is treated as <code>b &lt;= a</code></p>
+<p>Now let’s look at an example of these metamethods with our vectors:</p>
+<pre class=" language-lua"><code class="prism  language-lua"><span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token punctuation">{</span>
+    __eq <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> t<span class="token punctuation">.</span>x <span class="token operator">==</span> t2<span class="token punctuation">.</span>x <span class="token keyword">and</span> t<span class="token punctuation">.</span>y <span class="token operator">==</span> t2<span class="token punctuation">.</span>y <span class="token keyword">and</span> t<span class="token punctuation">.</span>z <span class="token operator">==</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">end</span><span class="token punctuation">,</span>
+    __lt <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> t<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> t2<span class="token punctuation">.</span>x <span class="token keyword">and</span> t<span class="token punctuation">.</span>y <span class="token operator">&lt;</span> t2<span class="token punctuation">.</span>y <span class="token keyword">and</span> t<span class="token punctuation">.</span>z <span class="token operator">&lt;</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">end</span><span class="token punctuation">,</span>
+    __le <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> t<span class="token punctuation">.</span>x <span class="token operator">&lt;=</span> t2<span class="token punctuation">.</span>x <span class="token keyword">and</span> t<span class="token punctuation">.</span>y <span class="token operator">&lt;=</span> t2<span class="token punctuation">.</span>y <span class="token keyword">and</span> t<span class="token punctuation">.</span>z <span class="token operator">&lt;=</span> t2<span class="token punctuation">.</span>z
+    <span class="token keyword">end</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">local</span> vec <span class="token operator">=</span> <span class="token function">setmetatable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token keyword">local</span> vec2 <span class="token operator">=</span> <span class="token function">setmetatable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+<span class="token keyword">local</span> vec3 <span class="token operator">=</span> <span class="token function">setmetatable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">340</span><span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">103</span><span class="token punctuation">}</span><span class="token punctuation">,</span> mt<span class="token punctuation">)</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>vec <span class="token operator">==</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; true</span>
+<span class="token function">print</span><span class="token punctuation">(</span>vec <span class="token operator">&lt;</span> vec3<span class="token punctuation">)</span> <span class="token comment">--&gt; true</span>
+<span class="token function">print</span><span class="token punctuation">(</span>vec <span class="token operator">&lt;=</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; true</span>
+<span class="token function">print</span><span class="token punctuation">(</span>vec <span class="token operator">&gt;</span> vec3<span class="token punctuation">)</span> <span class="token comment">--&gt; false</span>
+<span class="token function">print</span><span class="token punctuation">(</span>vec <span class="token operator">&gt;</span> vec2<span class="token punctuation">)</span> <span class="token comment">--&gt; false</span>
+<span class="token function">print</span><span class="token punctuation">(</span>vec <span class="token operator">~=</span> vec3<span class="token punctuation">)</span> <span class="token comment">--&gt; true</span>
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>This tutorial only shows you how to use each metamethod. Metatables &amp; metamethods are very powerful because not only can they be used on non-table values, but they can be utilized to add new features. Examples of those features include:</p>
+<ul>
+<li>OOP (Object Oriented Programming)</li>
+<li>Inheritance (OOP Concept)</li>
+<li>Default Table Values</li>
+<li>Read-only Tables</li>
+<li>Constants (enforced by errors)</li>
+<li>Table access tracking</li>
+<li>String indexing and slicing (<a href="https://github.com/greenmancode/luaextstringlib">see here</a>)</li>
+</ul>
+<p>If you want to explore metatables and metamethods more, I would suggest reading PIL (Programming in Lua) and looking at posts about it in the Lua Users Wiki.</p>
+
+    </div>
+  </div>
+</body>
+
+
+<!-- Mirrored from greenman.gq/files/metatablestut.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Mar 2022 11:08:07 GMT -->
+</html>
