@@ -373,7 +373,7 @@ skew to change the 'thickness' of the glitch.*/
 }
 
 .a-n2,.a-n1{ margin-left: 20px;
-    text-decoration: none; position: relative;  padding: 15px 30px; overflow: hidden; transition: 0.2s all;  color: #fff; letter-spacing: 4px;
+    text-decoration: none; position: relative;  padding: 15px 30px; overflow: hidden; transition: 0.2s all;  color: #fff; 
   border: 3px solid #fff;
   border-radius: 15px;
 }
