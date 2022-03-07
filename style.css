@@ -1,6 +1,4 @@
-/*
-Copyright � Greenman 2020. All Rights Reserved.
-*/
+/* evan.systems */
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee&amp;display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&amp;display=swap');
@@ -44,7 +42,7 @@ a {
     color: #8ceaff;
 }
 
-a:hover {
+.aa:hover {
     background-color: #8ceaff;
     color: black;
 
@@ -81,3 +79,16 @@ center {
   a:active {
     text-decoration: none;
   }
+
+  .ws {
+    white-space: pre-wrap;
+}
+
+.marg {
+    margin-bottom: 0.5rem;
+}
+    
+    
+.pp {
+  color: #8ceaff;
+}
