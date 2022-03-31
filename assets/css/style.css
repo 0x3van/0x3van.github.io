@@ -67,7 +67,6 @@ h6 {
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
 	font-size: 18px;
 	line-height: 1.6;
 	word-break: break-word;
@@ -1259,10 +1258,64 @@ h6:hover .anchor {
   .text:hover::after {
 	width: 100%;
 	left: 0;
-	transition-duration: 0.2s
+	transition-duration: 0.2s;
+	color:#682ae9;
+	
   }
   
   #menu .active {
 	font-weight: 500;
 	transition-duration: 0.5s;
+}
+
+.mono {
+	font-family: Roboto Mono, monospace;
+	white-space: nowrap;
+}
+.mono2 {
+	font-family: Roboto Mono, monospace;
+	white-space: nowrap;
+	opacity: 0.5;
+}
+
+.alttext {
+	font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+	transition: 0.5s;
+
+}
+.alttext:hover {
+	color: #682ae9;
+	transition: 0.5s;
+}
+
+.purple {
+	color:#682ae9;
+	white-space: nowrap;
+}
+/* #682ae9 purple */
+
+h1 {
+	white-space: nowrap;
+	transition: 0.5s;
+}
+
+
+h1:hover {
+	color:#682ae9;
+}
+
+.popbob {
+	color: --primary;
+	transition: 0.5s;
+}
+.popbob:hover {
+	color: #682ae9;
+}
+
+span:hover {
+	color:#682ae9;
+}
+
+img:hover {
+	color:#682ae9;;
 }
