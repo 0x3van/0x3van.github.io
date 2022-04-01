@@ -1,143 +1,641 @@
-<!doctype html>
-<html lang=fr dir=auto>
-   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-   <head>
-      <meta name=generator content="Hugo 0.83.0">
-      <meta charset=utf-8>
-      <meta http-equiv=x-ua-compatible content="IE=edge">
-      <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-      <meta name=robots content="index, follow">
-      <title>evan.systems</title>
-      <link rel=icon type=image/png sizes=32x32 href=../favicon-32x32.html>
-      <link rel=apple-touch-icon href=../apple-touch-icon.html>
-      <meta name=theme-color content="#2e2e33">
-      <meta name=msapplication-TileColor content="#2e2e33">
-      <link rel="stylesheet" href="./assets/css/style.css">
-      <meta name="yandex-verification" content="d4a63c65bec2f102" />
-      <noscript>
-         <style>#theme-toggle,.top-link{display:none}</style>
-         <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-      </noscript>
-      <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-      <meta charset="utf-8">
-        <meta property="type" content="website">
-        <meta property="title" content="evan | Developer">
-        <meta property="description" content="I am a web developer and lua programmmer. I am specialized in Typescript, Javascript, HTML, CSS and Lua.">
-        <meta property="url" content="evann.xyz">
-        <meta property="og:image" content="https://cdn.discordapp.com/attachments/842610340168728588/940893684986183700/channels4_profile.jpg">
-        <meta property="og:description" content="I am a web developer and lua programmmer. I am specialized in Typescript, Javascript, HTML, CSS and Lua.">
-        <meta name="theme-color" content="#0000FF">
-        <meta property="og:title" content="evan | Developer">
-        <meta property="og:site_name" content="evan">
-        <meta property="og:url" content="https://evann.xyz">
-        <meta property="og:type" content="website">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-        <link rel="shortcut icon" href="https://i.imgur.com/MpzpAbQ.png">
-      <script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"PaperModL2","url":"https://adityatelange.github.io/hugo-PaperMod/","description":"Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod","thumbnailUrl":"https://adityatelange.github.io/hugo-PaperMod/favicon.ico","sameAs":["https://github.com/adityatelange/hugo-PaperMod","https://ko-fi.com/adityatelange","index.xml"]}</script>
-   </head>
-   <body class=list id=top>
-      <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-      <header class=header>
-         <nav class=nav>
-            <div class=logo>
-               <a href=index.html accesskey=h title="evan.systems" class="mono popbob">.evan_systems()</a>
-               <span class=logo-switches>
-                  <button id=theme-toggle accesskey=t title="(Alt + T)">
-                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-                     </svg>
-                     <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"/>
-                        <line x1="12" y1="1" x2="12" y2="3"/>
-                        <line x1="12" y1="21" x2="12" y2="23"/>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                        <line x1="1" y1="12" x2="3" y2="12"/>
-                        <line x1="21" y1="12" x2="23" y2="12"/>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                     </svg>
-                  </button>
-                  <ul class=lang-switch>
-                     <li>|</li>
-                     <li><a href="https://discord.gg/7bTQv33yQq" title=English aria-label=English><svg xmlns="http://www.w3.org/2000/svg"  width="20px" height="20px" stroke="currentcolor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 71 55"  style="position:relative; top:5.2px">
-                        <g clip-path="url(#clip0)">
-                        <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill="#ffffff"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0">
-                        <rect width="71" height="55" fill="white"/>
-                        </clipPath>
-                        </defs>
-                        </svg> </a></li>
-                  </ul>
-               </span>
-            </div>
-            <ul id=menu>
-               <li><a href="https://discordapp.com/users/842568983525457940" title=""><span class="active text mono">.discord_user()</span></a></li>
-               <li><a href="http://kcis.xyz" title=""><span class="active text mono popbob">.other()</span></a></li>
-            </ul>
-         </nav>
-      </header>
-      <main class=main>
-         <div class=profile>
-            <div class=profile_inner>
-                <img src="https://avatars.githubusercontent.com/u/97516411?v=4" width="200" height="200">
-               <div style="white-space:nowrap;"> <span> <h1 class="mono">evan.systems</h1> </span></div>
-               <p id="text" class="mono2">  </p>
-               <div class=social-icons>
-                  <a href="https://evan.systems/gh" target=_blank rel="noopener noreferrer me" title=Github>
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/>
-                     </svg>
-                  </a>
-                  <a href="https://paypal.me/tricksterrs" target=_blank rel="noopener noreferrer me" title=PayPal>
-                     <svg xmlns="http://www.w3.org/2000/svg" stroke="currentcolor" viewBox="0 0 50 50" width="50px" height="50px" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  >
-                        <path d="M 11.4375 2 C 10.386719 2 9.503906 2.761719 9.28125 3.71875 L 9.28125 3.75 C 9.28125 3.75 3.40625 30.714844 2.25 36.09375 L 2.25 36.125 C 2.078125 36.984375 2.25 37.816406 2.75 38.34375 C 3.25 38.871094 3.882813 39 4.40625 39 L 12.96875 39 C 12.699219 40.21875 12.398438 41.558594 12.1875 42.53125 C 11.996094 43.410156 11.832031 44.125 11.71875 44.65625 C 11.605469 45.1875 11.5625 45.429688 11.53125 45.59375 C 11.449219 46.027344 11.46875 46.523438 11.8125 47.0625 C 12.15625 47.601563 12.910156 48 13.75 48 L 22.6875 48 C 23.761719 48 24.621094 47.25 24.84375 46.25 C 24.84375 46.25 25.378906 43.839844 25.90625 41.40625 C 26.167969 40.1875 26.417969 38.980469 26.625 38.03125 C 26.832031 37.082031 27 36.34375 27 36.34375 C 27.050781 36.128906 27.09375 36.035156 27.09375 36.03125 C 27.09375 36.027344 26.996094 36 27.28125 36 L 32.40625 36 C 39.789063 36 46 31.554688 47.65625 23.8125 C 48.589844 19.433594 47.472656 16.101563 45.34375 14 C 43.464844 12.144531 40.882813 11.261719 38.40625 11.0625 C 38.109375 8.089844 36.695313 5.769531 34.78125 4.28125 C 32.769531 2.71875 30.277344 2 27.90625 2 Z M 11.4375 4 L 27.90625 4 C 29.859375 4 31.957031 4.625 33.5625 5.875 C 35.027344 7.015625 36.011719 8.710938 36.3125 11 L 20.9375 11 C 20.675781 11 20.386719 10.96875 19.9375 11.09375 C 19.488281 11.21875 18.9375 11.742188 18.8125 12.28125 L 15.5625 26.90625 L 15.5625 26.96875 L 13.3125 37 L 4.40625 37 C 4.253906 37 4.179688 36.960938 4.1875 36.96875 C 4.195313 36.976563 4.15625 36.898438 4.21875 36.53125 C 4.222656 36.503906 4.210938 36.53125 4.21875 36.5 C 5.378906 31.109375 11.238281 4.238281 11.25 4.1875 L 11.25 4.15625 C 11.28125 4.054688 11.339844 4 11.4375 4 Z M 20.6875 13 C 20.773438 12.996094 20.769531 13 20.9375 13 L 36.40625 13 C 36.363281 13.652344 36.273438 14.34375 36.09375 15.1875 C 35.351563 18.664063 33.847656 21.039063 31.65625 22.625 C 29.464844 24.210938 26.519531 25 22.9375 25 L 18.53125 25 C 18.378906 25 18.191406 25.042969 18 25.0625 Z M 38.3125 13.15625 C 40.378906 13.339844 42.492188 14.011719 43.9375 15.4375 C 45.589844 17.070313 46.515625 19.523438 45.6875 23.40625 C 44.207031 30.320313 39.015625 34 32.40625 34 L 27.28125 34 C 26.535156 34 25.882813 34.332031 25.53125 34.78125 C 25.179688 35.230469 25.101563 35.707031 25.0625 35.875 C 25.015625 36.066406 24.894531 36.644531 24.6875 37.59375 C 24.480469 38.542969 24.199219 39.78125 23.9375 41 C 23.410156 43.433594 22.90625 45.8125 22.90625 45.8125 C 22.886719 45.894531 22.722656 46 22.6875 46 L 13.75 46 C 13.582031 46 13.523438 45.976563 13.5 45.96875 C 13.484375 46.046875 13.574219 45.625 13.6875 45.09375 C 13.800781 44.5625 13.964844 43.816406 14.15625 42.9375 C 14.535156 41.175781 15.03125 38.867188 15.53125 36.5625 C 16.53125 31.953125 17.53125 27.375 17.53125 27.375 C 17.578125 27.230469 17.613281 27.195313 17.78125 27.125 C 17.96875 27.046875 18.289063 27 18.53125 27 L 22.9375 27 C 26.816406 27 30.191406 26.144531 32.8125 24.25 C 35.433594 22.355469 37.238281 19.445313 38.0625 15.59375 C 38.25 14.714844 38.261719 13.945313 38.3125 13.15625 Z"/></svg>
-                  </a>
-                  <a href="./old" target=_blank rel="noopener noreferrer me" title="Old Page">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 11a9 9 0 019 9"/>
-                        <path d="M4 4a16 16 0 0116 16"/>
-                        <circle cx="5" cy="19" r="1"/>
-                     </svg>
-                  </a>
-               </div>
-               <div class=buttons><a class=button href="mailto:evan@trickster.pw" rel=noopener title=email><span class="button-inner alttext">Email</span></a>
-                  <a class=button href="https://github.com/evannnns?tab=repositories" rel=noopener title=Tags><span class="button-inner alttext" altte>Projects</span></a>
-               </div>
-            </div>
-         </div>
-      </main>
-      <footer class="footer alttext"><span>&copy; 2022 <a href="https://evan.systems/gh" class="alttext popbob">evan.systems</a></span>
-      </footer>
-      <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g>
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor">
-            <path d="M12 6H0l6-6z"/>
-         </svg>
-      </a>
-      <!-- scripts (im not lazy) -->
-      <script>
-              var text = document.getElementById('text');
+<html lang="en-US" class=" ">
 
-                var typewriter = new Typewriter(text, {
-                loop: true,
-                delay: 50,
-                });
+<head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="Content-Security-Policy" content="default-src 'self'">
+    <meta name="application-name" content="iuri.is()">
+    <meta name="theme-color" content="#0e1212">
+    <meta name="msapplication-TileColor" content="#0e1212">
+    <meta name="description" content="I am a creative frontend developer and this is my portfolio">
+    <meta name="subject" content="Portfolio">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="google-site-verification" content="t8FefK63Sw6I-anllt5CksU44riYpGe-PTKCmg8G0jU">
+    <meta property="og:url" content="https://iuri.is/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="iuri.is">
+    <meta property="og:image" content="/img/iuri.is-share.png">
+    <meta property="og:image:width" content="1080px">
+    <meta property="og:image:height" content="1080px">
+    <meta property="og:description" content="I am a creative frontend developer and this is my portfolio">
+    <meta property="og:site_name" content="iuri.is">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Iuri de Paula">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@iuridepaula">
+    <meta name="twitter:url" content="https://iuri.is/">
+    <meta name="twitter:title" content="iuri.is">
+    <meta name="twitter:description" content="I am a creative frontend developer and this is my portfolio">
+    <meta name="twitter:image" content="/img/iuri.is-share.png">
+    <title>iuri.is</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i|Montserrat:700" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="author" href="depaula.iuri@gmail.com">
+    <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#682AE9">
+    <link href="./css/404.css" rel="prefetch">
+    <link href="./css/about.css" rel="prefetch">
+    <link href="./css/amogus.css" rel="prefetch">
+    <link href="/css/amogus2.css" rel="prefetch">
+    <link href="./css/thing.css" rel="prefetch">
+    <link href="/css/workload.css" rel="prefetch">
+    <link href="./javascripty/404.js" rel="prefetch">
+    <link href="./javascripty/main.js" rel="prefetch">
+    <link href="./javascripty/obf.js" rel="prefetch">
+    <link href="/javascripty/wtf.js" rel="prefetch">
+    <link href="./javascripty/ballsack.js" rel="prefetch">
+    <link href="./javascripty/workload.js" rel="prefetch">
+    <link href="./css/secretsecret.css" rel="preload" as="style">
+    <link href="./javascripty/chunk.js" rel="preload" as="script">
+    <link href="./javascripty/cv.js" rel="preload" as="script">
+    <link href="./css/cs.css" rel="stylesheet">
+    <script async="" src="https://www.google-analytics.com/analytics.js" charset="utf-8"></script>
+    <meta name="description"
+        content="I am a frontend creative developer, designer and illustrator and this is my portfolio"
+        data-vue-router-controlled="">
+    <meta name="og:title" content="iuri.is" data-vue-router-controlled="">
+    <meta name="og:url" content="https://iuri.is/" data-vue-router-controlled="">
+    <meta name="og:description"
+        content="I am a frontend creative developer, designer and illustrator and this is my portfolio"
+        data-vue-router-controlled="">
+    <meta name="twitter:title" content="iuri.is" data-vue-router-controlled="">
+    <meta name="twitter:url" content="https://iuri.is/" data-vue-router-controlled="">
+    <meta name="twitter:description"
+        content="I am a frontend creative developer, designer and illustrator and this is my portfolio"
+        data-vue-router-controlled="">
+</head>
 
-                typewriter
-                .pauseFor(100)
-                .typeString('I am a developer')
-                .pauseFor(300)
-                .deleteChars(9)
-                .typeString('lua developer')
-                .pauseFor(300)
-                .deleteChars(13)
-                .typeString('web developer')
-                .pauseFor(300)
-                .typeString(',gamer, and absolute fucking unit')
-                .start();
-      </script>
-      <script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-   </body>
+<body class=""><noscript>
+        <h1>@evannnns - lua, css, js, py, php programmer</h1>
+        <p>For the last 8 years, I was the Head of New Products and Front-end at BizCommerce. A Saas e-commerce
+            platform, co-founded by me, with focus on simplifying and customizing the use of Magento.</p>
+        <p>Throughout these years I worked on (in addition to our entire visual identity) more than 200 tools, modules,
+            APIs, hundreds of themes, and customized projects for our clients.</p>
+        <p>Before this period for over 4 years, I switched between freelancing and starting my first company. I was
+            designing and building personal websites, online magazines, news portals, blogs, web applications.</p>
+        <p>Before designing for web, I was creating 3D models, matte painting, advertisements and arts for all types of
+            brands. From exporters of cachaça to pepper sauce manufacturers, from pharmaceutical laboratories to
+            toothpaste industries.</p>
+        <p>At the same time, I was studying Philosophy, Japanese animation, 3D modeling and rendering, fine arts and
+            video games. All of these subjects have a major impact on how I started and developed my creative process
+            and somehow led the way on how I view web development today.</p>
+        <p>Thanks for checking my website! It's a work in progress so check back often!</p>
+        <p>I am available for new projects and a coffee, contact me at:</p>
+        <ul>
+            <li><a href=mailto:depaula.iuri@gmail.com title="Send email">depaula.iuri@gmail.com</a></li>
+            <li><a href=https://www.linkedin.com/in/iuridepaula/ target=_blank title=LinkedIn>LinkedIn</a></li>
+            <li><a href=https://github.com/evannnns target=_blank title=GitHub>GitHub</a></li>
+        </ul>
+    </noscript>
+    <div id="app" class="page-home">
+        <div class="body-bg">
+            <div class="-default"></div>
+            <div class="-mario"></div>
+            <div class="-admin"></div>
+            <div class="-confianca"></div>
+            <div class="-desbravando"></div>
+        </div>
+        <header id="header">
+            <div class="header-bg">
+                <div class="-default"></div>
+                <div class="-mario"></div>
+                <div class="-admin"></div>
+                <div class="-confianca"></div>
+                <div class="-desbravando"></div>
+            </div>
+            <div class="header-container">
+                <div class="header-breadcrumb"
+                    style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">.evan()</div>
+                <!---->
+                <nav class="header-nav">
+                    <!---->
+                    <ul>
+                        <li><a href="/" class="router-link-exact-active router-link-active" title="Home">.home()</a></li>
+                        <li><a href="https://github.com/evannnns?tab=repositories" class="" title="my repo">.work()</a></li>
+                        <li><a href="./old" class="" title="old terminal site lol">.old_site()</a></li>
+                        <li><a href="mailto:me@evan.systems" title="send me an email and get shat on">.contact()</a></li>
+                        <li class="social-link"><a href="https://discordapp.com/users/842568983525457940" target="_blank"
+                                title="dicksword"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 71 55" style="position:relative; top:3px" role=img>
+                                    <g clip-path="url(#clip0)">
+                                    <path fill="#0051ff" d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill="#ffffff"></path>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0">
+                                    <rect width="71" height="55" ></rect>
+                                    </clipPath>
+                                    </defs>
+                                    </svg></a></li>
+                        <li class="social-link"><a href="https://github.com/evannnns" target="_blank"
+                                title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img"
+                                    aria-labelledby="GithubIcoTitle" class="ico">
+                                    <title id="GithubIcoTitle">GitHub logo</title>
+                                    <path fill-rule="evenodd"
+                                        d="M8 0C3.6 0 0 3.6 0 8c0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6 0 1.3-.1 2-.1s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.3.6.8.6 1.5v2.2c0 .2.1.5.6.4C13.7 14.5 16 11.5 16 8c0-4.4-3.6-8-8-8z"
+                                        clip-rule="evenodd"></path>
+                                </svg></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="home" class="wrapper" style="visibility: inherit; opacity: 1;">
+            <section id="intro" class="scene-intro">
+                <div class="static-container">
+                    <h1 class="title" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <span class="iuri">evan</span><span class="func">.systems()</span></h1>
+                    <div class="std" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <p class="-purple">@evannnns</p>
+                        <p class="-gray">
+                           lua, js, html, css, python and php programmer,<br>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="gap"></div>
+            <section id="curriculum" class="scene">
+                <div class="title-container">
+                    <h1 class="title"
+                        style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, -50%) matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, -100, -100, 1);">
+                        CurriculumVitae(<span class="params">'/.*$/g'</span>)
+                    </h1>
+                    <div class="std"
+                        style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, 50%) matrix3d(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, 100, -100, 1);">
+                        <p class="-gray">&lt;A life+work showcase&gt;</p>
+                    </div>
+                </div>
+            </section>
+            <div>
+                <section id="bizTitle" class="scene">
+                    <div class="title-container">
+                        <h1 class="title"
+                            style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, -50%) matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, -100, -100, 1);">
+                            biz(<span class="params">2011,2019</span>)
+                        </h1>
+                    </div>
+                </section>
+                <section id="biz1" class="scene">
+                    <div class="static-container">
+                        <div class="std">
+                            <p class="-big">
+                                As an absolute unit, I have been <b class="-purple">researching on http request related vulnerabilities
+                                    </b> @ <a href="https://evan.systems/gh" target="_blank"
+                                    title="Visit Biz Commerce's website" class="-purple">my github.</a>.
+                            </p>
+                        </div>
+                    </div>
+               
+            <div class="gap"></div>
+            <div>
+                <section id="earlyTitle" class="scene">
+                    <div class="title-container">
+                        <h1 class="title"
+                            style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, -50%) matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, -100, -100, 1);">
+                            EarlyDays(<span class="params">2008,2011</span>)
+                        </h1>
+                        <div class="std"
+                            style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, 50%) matrix3d(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, -100, 100, 1);">
+                            <p class="-gray">&lt;table-yes&gt;</p>
+                        </div>
+                        <div class="clouds cloud-1"
+                            style="transform: translate(20%, 50%) matrix(1, 0, 0, 1, -1043.77, -582.792);"></div>
+                        <div class="pepe bg-head">
+                            <div class="blink" style="visibility: inherit; opacity: 1;"></div>
+                            <div class="keyboard"></div>
+                            <div class="minas"></div>
+                            <div class="rio">
+                                <div class="particles">
+                                    <div class="particle p0"></div>
+                                    <div class="particle p1"></div>
+                                    <div class="particle p2"></div>
+                                    <div class="particle p3"></div>
+                                    <div class="particle p4"></div>
+                                    <div class="particle p5"></div>
+                                    <div class="particle p6"></div>
+                                    <div class="particle p7"></div>
+                                    <div class="particle p8"></div>
+                                    <div class="particle p9"></div>
+                                    <div class="particle p10"></div>
+                                    <div class="particle p11"></div>
+                                    <div class="particle p12"></div>
+                                    <div class="particle p13"></div>
+                                    <div class="particle p14"></div>
+                                </div>
+                                <div class="vase">
+                                    <div class="bg-rio_vase_foliage_3"></div>
+                                    <div class="bg-rio_vase_foliage_2"></div>
+                                    <div class="bg-rio_vase_foliage_1"></div>
+                                    <div class="bg-rio_vase"></div>
+                                </div>
+                                <div class="bg-rio_pao_cristo"></div>
+                                <div class="waterfall"></div>
+                                <div class="bg-rio_palmtree_1"></div>
+                                <div class="bg-rio_palmtree_2"></div>
+                            </div>
+                            <div class="am-pa">
+                                <div class="bg-ampa_foliage_3"></div>
+                                <div class="bg-ampa_tree_2"></div>
+                                <div class="bg-ampa_foliage_2"></div>
+                                <div class="bg-ampa_parrot_wing"></div>
+                                <div class="bg-ampa_foliage_1"></div>
+                                <div class="bg-ampa_ver_o_peso"></div>
+                                <div class="bg-ampa_tree_1"></div>
+                                <div class="bg-ampa_oxes"></div>
+                            </div>
+                            <div class="metals">
+                                <div class="bg-metals_sax"></div>
+                                <div class="bg-metals_trumpet"></div>
+                                <div class="bg-metals_trombone">
+                                    <div class="bg-metals_trombone_thing"></div>
+                                </div>
+                            </div>
+                            <div class="bonfim-church"></div>
+                            <div class="bonfim b1"></div>
+                            <div class="ear bg-head-ear"></div>
+                        </div>
+                        <div class="clouds cloud-2"
+                            style="transform: translate(-10%, 40%) matrix(1, 0, 0, 1, -1043.77, -582.792);"></div>
+                        <div class="clouds cloud-3"
+                            style="transform: translate(40%, 70%) matrix(1, 0, 0, 1, -696, -388.528);"></div>
+                        <div role="img" aria-labelledby="pepeDesc" class="pepe-scenery">
+                            <p id="pepeDesc" class="ariaLabel">A floating head carrying musical instruments in the ear,
+                                foliage
+                                and monuments in the hair, flies over a greenish ocean during the sunset</p>
+                            <div class="sky"></div>
+                            <div class="ocean">
+                                <div class="sky-mask"></div>
+                                <div class="ocean-waves w1"
+                                    style="z-index: 9; transform: translate(10%, 0%) matrix(1, 0, 0, 1, 0, 0);"></div>
+                                <div class="ocean-waves w2"
+                                    style="z-index: 9; transform: translate(10%, 0%) matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="early-days" class="scene">
+                    <div class="static-container">
+                        <div class="std">
+                            <p>
+                                Lua &amp; Typescript.
+                            </p>
+                            <p class="-big">
+                               These are my most important <span class="-purple">  assets</span> in the programming world.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="early-days2" class="scene">
+
+                </section>
+                <section id="Ghibli4" class="scene"></section>
+            </div>
+            <section id="wrapperTitle" class="scene">
+                <div class="static-container" style="visibility: inherit; opacity: 1;">
+                    <h1 class="title">
+                        &lt;/end&gt;
+                    </h1>
+                    <div class="std">
+                        <p class="-gray">
+                            /*<br>
+                                - congrats on making it here, im still working on the site lol <br>
+                            */
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="thanks" class="scene">
+                <div class="static-container">
+                    <div class="std"><svg xmlns="http://www.w3.org/2000/svg" id="potion" viewBox="0 0 100 100">
+                            <g class="potion-potion">
+                                <g class="potion-vase">
+                                    <g class="potion-bottle">
+                                        <path fill="#00c8c8"
+                                            d="M55.6 23.2H44.8c-2.1 0-3.8-1.8-3.8-3.8l.1-6.4c0-1.6 1.4-3 3-3l12.6.1c1.6 0 3 1.4 3 3l-.1 6.4c-.3 2-2 3.7-4 3.7z">
+                                        </path>
+                                        <path fill="#fff"
+                                            d="M64.7 25.8c0-.2.2-6.2.2-6.2.1-2.2-1.8-4.1-4-4l-20.4-.1c-2.2 0-4 1.8-4 4.1 0 0 .1 5.9 0 6.2C25.8 31 18.6 42 18.6 54.7 18.4 72.5 32.6 87 50.1 87c17.5.1 31.9-14.3 32-32.2.1-12.8-7-23.7-17.4-29zm10.1 28.8c-.1 13.7-11.1 24.7-24.6 24.7-13.5-.1-24.4-11.2-24.3-24.9S37 29.7 50.5 29.7c13.4.1 24.4 11.2 24.3 24.9z"
+                                            opacity=".8"></path>
+                                        <path fill="#e8d7ef"
+                                            d="M50.4 29.7c-13.5 0-24.5 11.1-24.6 24.7 0 13.7 10.8 24.9 24.3 24.9s24.5-11.1 24.6-24.7c.2-13.7-10.8-24.8-24.3-24.9z"
+                                            opacity=".8"></path>
+                                        <g class="potion-liquids">
+                                            <path fill="#4612a5" class="potion-liquid2">
+                                                <animate dur="1.6s" repeatCount="indefinite" attributeName="d"
+                                                    values="M73.5 50.4c-.9-4.8-4.5-4.5-7.9-3.8-9.9 1.8-23.5 13-31.1 14.3-5.4 1-8-5.2-7.4-2.2 2.3 12.7 14.6 21.3 27.4 19 12.8-2.2 21.3-14.4 19-27.3z;
+                     M73.5 50.4c-.9-4.8-1 5.3-4.4 5.9-11 2-19.7-6.3-36-3.9-5.5.8-6.6 3.3-6.1 6.3 2.3 12.7 14.6 21.3 27.4 19 12.9-2.2 21.4-14.4 19.1-27.3z;
+                     M73.5 50.4c-.9-4.8-4.5-4.5-7.9-3.8-9.9 1.8-23.5 13-31.1 14.3-5.4 1-8-5.2-7.4-2.2 2.3 12.7 14.6 21.3 27.4 19 12.8-2.2 21.3-14.4 19-27.3z;" calcMode="spline"
+                                                    keySplines="0.455 0.03 0.515 0.955;
+                     0.455 0.03 0.515 0.955"></animate>
+                                            </path>
+                                            <path fill="#5918df" class="potion-liquid">
+                                                <animate dur="1.4s" repeatCount="indefinite" attributeName="d"
+                                                    values="M27.1 58.8c-.9-4.8 2.6-5.8 6.1-6.3 9.9-1.8 26.5 3.9 34.1 2.6 5.4-1 5.7-7.7 6.2-4.6 2.3 12.7-6.2 25.1-19 27.4-12.8 2.3-25-6.2-27.4-19.1z;
+                     M27.1 58.8c-.9-4.8 2.8 2.9 6.2 2.2 9.9-1.8 21.9-13.1 33-14.6 5.5-.7 6.6.9 7.1 3.9 2.3 12.7-6.2 25.1-19 27.4-12.7 2.5-24.9-6-27.3-18.9z;
+                     M27.1 58.8c-.9-4.8 2.6-5.8 6.1-6.3 9.9-1.8 26.5 3.9 34.1 2.6 5.4-1 5.7-7.7 6.2-4.6 2.3 12.7-6.2 25.1-19 27.4-12.8 2.3-25-6.2-27.4-19.1z;" calcMode="spline"
+                                                    keySplines="0.455 0.03 0.515 0.955;
+                     0.455 0.03 0.515 0.955"></animate>
+                                            </path>
+                                        </g>
+                                    </g>
+                                    <g class="potion-drops">
+                                        <ellipse cx="49.4" cy="37.5" fill="#5918df" rx="4.6" ry="4.6"
+                                            class="potion-drop2" data-svg-origin="44.79999923706055 32.900001525878906"
+                                            transform="matrix(1,0,0,1,0,9.199999809265137)" style=""></ellipse>
+                                        <ellipse cx="59.8" cy="42" fill="#5918df" rx="2.8" ry="2.8" class="potion-drop"
+                                            data-svg-origin="57.000003814697266 39.20000076293945"
+                                            transform="matrix(1,0,0,1,0,5.599999904632568)" style=""></ellipse>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="madeof">
+                            <p class="-comment">// written with</p>
+                            <div class="cols">
+                                <ul class="col">
+                                    <li class="ico">&lt;/&gt;</li>
+                                    <li>vue.js</li>
+                                    <li>GSAP</li>
+                                    <li>two.js</li>
+                                    <li>vs.code and neovim</li>
+                                    <li>your biological mother</li>
+                                </ul>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <p>
+                            the website is really experimental,<br><span class="-comment">// its a wip and ive been experimenting with vue.js. so um idk its not the best lo, go and
+                                check back often if you want to</span></p>
+                        <p class="-big">
+                            footer
+                        <p class="-big"> evan.systems </p>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div>
+            <div class="spine" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+            <div class="spine-target">
+                <div class="circle"
+                    style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); background-color: rgb(89, 24, 223);">
+                </div>
+                <div class="pulse" style="visibility: hidden; opacity: 0; transform: matrix(8, 0, 0, 8, 0, 0);"></div>
+            </div>
+        </div>
+    </div>
+wtf are you looking at
+                <g class="js-color-text" fill="#fff">
+                    <path
+                        d="M20.047 153.665v-1.9h3.888v-4.093h-3.888v-1.9h10.231v1.9h-4.59v4.093h4.59v1.9zM29.898 142.236c-.331.565-.784.997-1.359 1.294s-1.222.446-1.944.446c-.721 0-1.369-.149-1.943-.446a3.316 3.316 0 0 1-1.36-1.294c-.331-.564-.497-1.232-.497-2.002s.166-1.438.497-2.002a3.316 3.316 0 0 1 1.36-1.294c.574-.297 1.223-.445 1.943-.445.723 0 1.369.148 1.944.445a3.307 3.307 0 0 1 1.359 1.294c.331.564.497 1.232.497 2.002s-.166 1.438-.497 2.002m-1.703-3.347c-.435-.33-.967-.496-1.601-.496-.633 0-1.166.166-1.601.496-.433.332-.649.78-.649 1.346 0 .564.217 1.013.649 1.345.435.331.968.497 1.601.497.634 0 1.166-.166 1.601-.497.435-.332.649-.78.649-1.345.001-.566-.214-1.014-.649-1.346M22.911 134.852v-1.813h1.186a3.335 3.335 0 0 1-.951-1.009 2.423 2.423 0 0 1-.352-1.271c0-.682.19-1.229.57-1.645.381-.413.932-.621 1.652-.621h5.262v1.812h-4.721c-.419 0-.727.096-.921.285-.195.19-.292.447-.292.769 0 .302.115.58.35.833.234.254.577.458 1.03.613.454.156.993.234 1.616.234h2.938v1.813h-7.367zM29.898 125.136a3.314 3.314 0 0 1-1.359 1.294c-.575.297-1.222.445-1.944.445-.721 0-1.369-.148-1.943-.445a3.322 3.322 0 0 1-1.36-1.294c-.331-.565-.497-1.232-.497-2.002 0-.771.166-1.438.497-2.003a3.313 3.313 0 0 1 1.36-1.293c.574-.297 1.223-.446 1.943-.446.723 0 1.369.149 1.944.446s1.028.728 1.359 1.293.497 1.232.497 2.003c.001.769-.166 1.436-.497 2.002m-1.703-3.347c-.435-.331-.967-.497-1.601-.497-.633 0-1.166.166-1.601.497-.433.331-.649.778-.649 1.345 0 .564.217 1.013.649 1.344.435.332.968.498 1.601.498.634 0 1.166-.166 1.601-.498.435-.331.649-.779.649-1.344.001-.567-.214-1.014-.649-1.345M22.911 117.75v-1.812h1.199c-.419-.265-.742-.586-.972-.966s-.345-.784-.345-1.213c0-.272.05-.569.146-.892l1.682.336a1.429 1.429 0 0 0-.205.76c0 .576.261 1.048.783 1.418.521.37 1.342.557 2.461.557h2.617v1.812h-7.366zM29.812 111.252c-.391.511-.857.851-1.403 1.016l-.776-1.446c.381-.138.68-.329.893-.577.215-.249.321-.544.321-.885a1.2 1.2 0 0 0-.168-.658c-.112-.175-.294-.263-.548-.263-.225 0-.406.105-.548.313-.142.21-.291.534-.446.973-.019.068-.058.17-.117.307-.224.565-.506 1.004-.848 1.315-.34.313-.779.467-1.314.467-.381 0-.727-.102-1.039-.306a2.185 2.185 0 0 1-.744-.84 2.554 2.554 0 0 1-.279-1.207c0-.497.105-.949.314-1.359.211-.408.506-.725.886-.949l.993 1.082c-.43.292-.644.686-.644 1.184a.84.84 0 0 0 .154.504.471.471 0 0 0 .401.212c.176 0 .338-.103.49-.307.15-.205.334-.604.547-1.199.205-.564.474-1.001.805-1.308.332-.308.756-.46 1.271-.46.721 0 1.299.229 1.732.687s.65 1.057.65 1.797c.001.759-.194 1.396-.583 1.907M35.481 17.006l-4.782 14.969h-3.266l-2.584-9.682-2.584 9.682h-3.268l-4.782-14.969h3.713l2.673 10.276 2.525-10.276h3.445l2.524 10.276 2.674-10.276zM37.978 27.163c1.426 0 2.496 1.068 2.496 2.495 0 1.425-1.07 2.495-2.496 2.495-1.425 0-2.494-1.07-2.494-2.495-.001-1.427 1.069-2.495 2.494-2.495">
+                    </path>
+                </g>
+            </svg></a></div>
+    <script src="/js/chunk-vendors.8eef1888.js"></script>
+    <script src="/js/app.d629961d.js"></script>
+</body>
+<style id="stylus-2" type="text/css" class="stylus">
+    .ytp-hide-info-bar .ytp-chrome-top {
+        z-index: 1;
+    }
+
+    ytd-thumbnail #thumbnail.ytd-thumbnail {
+        border-radius: 15px;
+        filter: saturate(1);
+        margin-right: 2px;
+        margin-left: 2px;
+        transition: 500ms ease-out;
+    }
+
+    ytd-app {
+        background-image: var(--fluent-background-image);
+        background-blend-mode: normal;
+    }
+
+    ytd-thumbnail {
+        transition: 50ms ease-out;
+    }
+
+    ytd-thumbnail:hover {
+        z-index: 1;
+        filter: drop-shadow(0px 5px 10px var(--je-spec-brand-shadow-primary));
+        transform: scale(1.1);
+        /*translateY(-8px);*/
+        transform-origin: center;
+        transition: 100ms ease-in;
+        position: relative;
+    }
+
+    .ytp-larger-tap-buttons .ytp-settings-menu {
+        border-radius: 15px;
+    }
+
+    .ytp-tooltip-text {
+        border-radius: 8px
+    }
+
+    ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer {
+        --ytd-item-section-item-margin: 16px;
+        background-color: var(--je-spec-brand-background-primary);
+    }
+
+    ytd-masthead {
+        backdrop-filter: blur(8px);
+        background-image: var(--fluent-background-image);
+        background-blend-mode: normal;
+        background-color: var(--je-spec-brand-background-primary);
+        box-shadow: 0px -5px 25px var(--je-spec-brand-shadow-primary);
+    }
+
+    ytd-guide-renderer {
+        background-color: var(--je-spec-brand-background-primary);
+    }
+
+    #chips.ytd-feed-filter-chip-bar-renderer {
+        background-color: var(--je-spec-brand-background-primary);
+        backdrop-filter: blur(8px);
+        background-blend-mode: normal;
+        background-image: var(--fluent-background-image);
+    }
+
+    #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+        background-color: transparent;
+        transform: translateY(-0px);
+        border-color: var(--je-spec-brand-border-primary);
+    }
+
+    yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer {
+        background-color: var(--je-spec-brand-background-primary);
+    }
+
+    ytd-thumbnail-overlay-time-status-renderer {
+        border-radius: 7px !important;
+    }
+
+    ytd-guide-entry-renderer {
+        width: 93%;
+    }
+
+    ytd-guide-entry-renderer[active] {
+        border-radius: 0px 30px 30px 0px;
+    }
+
+    #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:hover,
+    #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:active {
+        border-radius: 0px 30px 30px 0px;
+    }
+
+    #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:hover,
+    #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:focus {
+        border-radius: 0px 30px 30px 0px;
+    }
+
+    #container.ytd-searchbox {
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    #search-icon-legacy.ytd-searchbox {
+        border-radius: 0px 20px 20px 0px;
+    }
+
+    #left-arrow-button.ytd-feed-filter-chip-bar-renderer,
+    #right-arrow-button.ytd-feed-filter-chip-bar-renderer {
+        background-image: var(--fluent-background-image);
+        background-blend-mode: normal;
+    }
+
+    ytd-mini-guide-renderer {
+        background-color: transparent;
+    }
+
+    #items.ytd-mini-guide-renderer {
+        transform: translateY(0px);
+    }
+
+    #header.ytd-rich-grid-renderer {
+        /* 	margin-left: -144px; */
+        opacity: 1;
+        margin-top: -50px;
+        transform: translateY(-500px);
+        background-color: transparent;
+    }
+
+    #scroll-container.ytd-feed-filter-chip-bar-renderer {
+        margin-left: -70px;
+    }
+
+    ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer {
+        background-color: transparent;
+        --ytd-item-section-item-margin: 24px;
+    }
+
+    tp-yt-paper-button.ytd-subscribe-button-renderer {
+        border-radius: 10px;
+    }
+
+    ytd-button-renderer #button.ytd-button-renderer {
+        border-radius: 10px;
+    }
+
+    ytd-button-renderer.style-primary[is-paper-button] {
+        border-radius: 10px;
+    }
+
+    ytd-browse[page-subtype=channels] {
+        background: transparent
+    }
+
+    #wrapper.tp-yt-app-header-layout>[slot=header] {
+        left: 86px;
+    }
+
+    #sponsor-button.ytd-c4-tabbed-header-renderer ytd-button-renderer.ytd-c4-tabbed-header-renderer {
+        border-radius: 10px;
+    }
+
+    tp-yt-app-toolbar {
+        box-shadow: 60px -10px 40px var(--je-spec-brand-shadow-primary);
+    }
+
+    ytd-browse[page-subtype~=channels] ytd-two-column-browse-results-renderer.ytd-browse {
+        margin-top: 20px;
+    }
+
+    ytd-mini-guide-entry-renderer {
+        background-color: transparent;
+        margin-left: 5px;
+        margin-right: -5px
+    }
+
+    ytd-mini-guide-entry-renderer:hover {
+        background-color: rgba(134, 134, 134, .2);
+        border-radius: 10px;
+    }
+
+    ytd-thumbnail.ytd-rich-grid-media:before {
+        background-color: transparent
+    }
+
+    html:not(.style-scope),
+    :not(.style-scope) {
+        /* 	--je-spec-brand-background-primary: rgba(255, 255, 255, .64); */
+        --je-spec-brand-border-primary: rgba(0, 0, 0, 0);
+    }
+
+    #contentWrapper.tp-yt-iron-dropdown>* {
+        border-radius: 20px;
+        filter: drop-shadow(0px 10px 15px var(--je-spec-brand-shadow-primary));
+        background-image: var(--fluent-background-image);
+        background-color: var(--je-spec-brand-background-primary);
+        backdrop-filter: blur(8px);
+        background-blend-mode: normal;
+    }
+
+    tp-yt-iron-dropdown {
+        border-radius: 20px;
+        filter: drop-shadow(0px 10px 15px var(--je-spec-brand-shadow-primary));
+        background-image: var(--fluent-background-image);
+        backdrop-filter: blur(8px);
+        background-blend-mode: normal;
+        overflow: hidden;
+    }
+
+    tp-yt-paper-listbox {
+        background: transparent
+    }
+
+    ytd-voice-search-dialog-renderer[dialog],
+    tp-yt-paper-dialog {
+        border-radius: 30px
+    }
+
+    /* DEFINING CONSTANTS */
+    html:not(.style-scope) {
+        --fluent-background-image: url(https://github.com/johneusebio/acrylic-mica-css/blob/main/noise.png?raw=true);
+
+
+        /* --fluent-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==); */
+    }
+
+    html:not(.style-scope),
+    :not(.style-scope)[light] {
+        /* over-writing their defaults	 */
+        --je-spec-brand-background-primary: rgba(255, 255, 255, 0.8);
+        --je-spec-brand-border-primary: rgb(232, 232, 232);
+        --je-spec-brand-shadow-primary: rgba(0, 0, 0, .5);
+    }
+
+    html:not(.style-scope)[dark],
+    :not(.style-scope)[dark] {
+        /* over-writing their defaults	 */
+        --je-spec-brand-background-primary: rgba(0, 0, 0, .85);
+        --je-spec-brand-border-primary: rgb(47, 47, 47);
+        --je-spec-brand-shadow-primary: rgba(243, 243, 243, .2);
+    }
+
+    /* FUNCTIONS */
+</style>
+
 </html>
