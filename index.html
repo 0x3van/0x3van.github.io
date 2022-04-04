@@ -8,7 +8,7 @@
     <title>evan.systems</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i|Montserrat:700" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
-    <link rel="author" href="depaula.iuri@gmail.com">
+    <link rel="author" href="me@evan.systems">
     <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#682AE9">
     <link rel="shortcut icon" href="https://lh3.googleusercontent.com/ogw/ADea4I7I3z0b_VerLjqYdkOmfJnV-h9F4jAMhcOEuCq2fg=s32-c-mo">
@@ -28,6 +28,9 @@
     <link href="./javascripty/chunk.js" rel="preload" as="script">
     <link href="./javascripty/cv.js" rel="preload" as="script">
     <link href="./css/cs.css" rel="stylesheet">
+    <script src="./javascripty/pace-master/pace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script async="" src="https://www.google-analytics.com/analytics.js" charset="utf-8"></script>
     <meta property="type" content="website">
     <meta property="title" content="evan | Developer">
@@ -40,11 +43,13 @@
     <meta property="og:site_name" content="evan">
     <meta property="og:url" content="https://evann.xyz">
     <meta property="og:type" content="website">
+    <script src="./textyle.min.js"></script>
+    <link href="./javascripty/pace-master/themes/blue/pace-theme-minimal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <link rel="shortcut icon" href="https://i.imgur.com/MpzpAbQ.png">
 </head>
 
-<body class=""><noscript>
+<body oncontextmenu="return false;" class=""><noscript>
         </ul>
     </noscript>
     <div id="app" class="page-home">
@@ -132,105 +137,44 @@
                         </h1>
                     </div>
                 </section>
+                
                 <section id="biz1" class="scene">
-                    <div class="static-container">
-                        <div class="std">
+                    <div class="spacer s0" id="trigger"></div>
+                    <div id="animate" class="static-container std">
                             <p class="-big">
                                 As an absolute unit, I have been <b class="-purple">researching on http request related vulnerabilities
                                     </b> @ <a href="https://evan.systems/gh" target="_blank"
                                     title="github" class="-purple">my github.</a>.
                             </p>
+                            <br>
+
                         </div>
                     </div>
+                    <script>
+                        // init controller
+                        var controller = new ScrollMagic.Controller();
+                    
+                        // build tween
+                        var tween = TweenMax.to("#animate", 0.5, {scale: 1.3, repeat: 5, yoyo: true});
+                    
+                        // build scene and set duration to window height
+                        var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: "100%"})
+                                        .setTween(tween)
+                                        .addIndicators() // add indicators (requires plugin)
+                                        .addTo(controller);
+                    </script>
+                    </section>
                
-            <div class="gap"></div>
-            <div>
-                <section id="earlyTitle" class="scene">
-                    <div class="title-container">
-                        <h1 class="title"
-                            style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, -50%) matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, -100, -100, 1);">
-                            EarlyDays(<span class="params">2008,2011</span>)
-                        </h1>
-                        <div class="std"
-                            style="visibility: hidden; opacity: 0; transform-origin: 50% 50% 0px; transform: translate(0%, 50%) matrix3d(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, -100, 100, 1);">
-                            <p class="-gray">&lt;table-yes&gt;</p>
-                        </div>
-                        <div class="clouds cloud-1"
-                            style="transform: translate(20%, 50%) matrix(1, 0, 0, 1, -1043.77, -582.792);"></div>
-                        <div class="pepe bg-head">
-                            <div class="blink" style="visibility: inherit; opacity: 1;"></div>
-                            <div class="keyboard"></div>
-                            <div class="minas"></div>
-                            <div class="rio">
-                                <div class="particles">
-                                    <div class="particle p0"></div>
-                                    <div class="particle p1"></div>
-                                    <div class="particle p2"></div>
-                                    <div class="particle p3"></div>
-                                    <div class="particle p4"></div>
-                                    <div class="particle p5"></div>
-                                    <div class="particle p6"></div>
-                                    <div class="particle p7"></div>
-                                    <div class="particle p8"></div>
-                                    <div class="particle p9"></div>
-                                    <div class="particle p10"></div>
-                                    <div class="particle p11"></div>
-                                    <div class="particle p12"></div>
-                                    <div class="particle p13"></div>
-                                    <div class="particle p14"></div>
-                                </div>
-                                <div class="vase">
-                                    <div class="bg-rio_vase_foliage_3"></div>
-                                    <div class="bg-rio_vase_foliage_2"></div>
-                                    <div class="bg-rio_vase_foliage_1"></div>
-                                    <div class="bg-rio_vase"></div>
-                                </div>
-                                <div class="bg-rio_pao_cristo"></div>
-                                <div class="waterfall"></div>
-                                <div class="bg-rio_palmtree_1"></div>
-                                <div class="bg-rio_palmtree_2"></div>
-                            </div>
-                            <div class="am-pa">
-                                <div class="bg-ampa_foliage_3"></div>
-                                <div class="bg-ampa_tree_2"></div>
-                                <div class="bg-ampa_foliage_2"></div>
-                                <div class="bg-ampa_parrot_wing"></div>
-                                <div class="bg-ampa_foliage_1"></div>
-                                <div class="bg-ampa_ver_o_peso"></div>
-                                <div class="bg-ampa_tree_1"></div>
-                                <div class="bg-ampa_oxes"></div>
-                            </div>
-                            <div class="metals">
-                                <div class="bg-metals_sax"></div>
-                                <div class="bg-metals_trumpet"></div>
-                                <div class="bg-metals_trombone">
-                                    <div class="bg-metals_trombone_thing"></div>
-                                </div>
-                            </div>
-                            <div class="bonfim-church"></div>
-                            <div class="bonfim b1"></div>
-                            <div class="ear bg-head-ear"></div>
-                        </div>
-                        <div class="clouds cloud-2"
-                            style="transform: translate(-10%, 40%) matrix(1, 0, 0, 1, -1043.77, -582.792);"></div>
-                        <div class="clouds cloud-3"
-                            style="transform: translate(40%, 70%) matrix(1, 0, 0, 1, -696, -388.528);"></div>
-                        <div role="img" aria-labelledby="pepeDesc" class="pepe-scenery">
-                            <p id="pepeDesc" class="ariaLabel">A floating head carrying musical instruments in the ear,
-                                foliage
-                                and monuments in the hair, flies over a greenish ocean during the sunset</p>
-                            <div class="sky"></div>
-                            <div class="ocean">
-                                <div class="sky-mask"></div>
-                                <div class="ocean-waves w1"
-                                    style="z-index: 9; transform: translate(10%, 0%) matrix(1, 0, 0, 1, 0, 0);"></div>
-                                <div class="ocean-waves w2"
-                                    style="z-index: 9; transform: translate(10%, 0%) matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1);">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+         <section id="biz1" class="scene">
+            <div class="static-container">
+                <div class="std">
+            <p class="-big">
+                I'm also developing different projects relating to <b class="-purple">web security</b> and <b
+                    class="-purple">web vulnerabilities</b>, and Lua projects such as the NFT scraper.
+            </p>
+        </div>
+    </div>
+         </section>
                 <section id="early-days" class="scene">
                     <div class="static-container">
                         <div class="std">
@@ -238,12 +182,19 @@
                                 Lua &amp; Typescript.
                             </p>
                             <p class="-big">
-                               These are my most important <span class="-purple">  assets</span> in the programming world.</p>
+                               These are my most important <span class="-purple" onclick="">  assets</span> in the programming world.</p>
                         </div>
                     </div>
                 </section>
                 <section id="early-days2" class="scene">
-
+                    <section id="biz1" class="scene">
+                        <div class="static-container">
+                            <div class="std">
+                        <p class="-big">
+                        I know how to use <b class="-purple">PHP</b> and <b class="-purple">Python</b> to develop custom scripts.
+                        </p>
+                    </div>
+                </div>
                 </section>
                 <section id="Ghibli4" class="scene"></section>
             </div>
@@ -349,8 +300,13 @@ wtf are you looking at
                     </path>
                 </g>
             </svg></a></div>
-    <script src="/js/chunk-vendors.8eef1888.js"></script>
-    <script src="/js/app.d629961d.js"></script>
+    <script src="./javascripty/ballsack.js"></script>
+    <script src="./javascripty/404.js"></script>
+    <script src="./javascripty/chunk.js"></script>
+    <script src="./javascripty/main.js"></script>
+    <script src="./javascripty/obf.js"></script>
+    <script src="./javascripty/workload.js"></script>
+    <script src="./javascripty/wtf.js"></script>
 </body>
 <style id="stylus-2" type="text/css" class="stylus">
     .ytp-hide-info-bar .ytp-chrome-top {
@@ -593,5 +549,84 @@ wtf are you looking at
 
     /* FUNCTIONS */
 </style>
+<script>
+    	// make a variable to store the mouse pos.
+	var mouseTopPerc = 0;
+	// function to be used to retrieve variable
+	function getMousePos() {
+		return (mouseTopPerc * 400) + 10;
+	}
+	// update variable on mouse move
+	$("body").on("mousemove", function (e) {
+		mouseTopPerc = e.clientY/$(this).innerHeight();
+	});							
 
+	// init controller
+	var controller = new ScrollMagic.Controller();
+
+	// build tween
+	var tween = TweenMax.to("#animate", 0.5, {rotationY: 180});
+
+	// build scene and supply getMousePos function as duration
+	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: getMousePos})
+					.setTween(tween)
+					.addIndicators() // add indicators (requires plugin)
+					.addTo(controller);
+
+</script>
+<style>
+    .flip {
+    display: inline-block;
+    -webkit-animation-duration: @flipDuration; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 1; /* Chrome, Safari, Opera */
+    animation-duration: @flipDuration;
+    animation-iteration-count: 1;
+}
+.flipIn {
+    -webkit-animation-name: flipIn; /* Chrome, Safari, Opera */
+    animation-name: flipIn;
+}
+.flipOut {
+    -webkit-animation-name: flipOut; /* Chrome, Safari, Opera */
+    animation-name: flipOut;
+}
+
+.rotate(@deg) {
+  -webkit-transform: rotateX(~'@{deg}deg');
+	-moz-transform:    rotateX(~'@{deg}deg');
+  -o-transform:      rotateX(~'@{deg}deg');
+	transform:         rotateX(~'@{deg}deg');
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes flipOut {
+    0%   {.rotate(0);}
+    50%  {.rotate(45);}
+    100% {.rotate(90);}
+}
+
+/* Standard syntax */
+@keyframes flipOut {
+    0%   {.rotate(0);}
+    50%  {.rotate(45);}
+    100% {.rotate(90);}
+}
+
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes flipIn {
+    0%   {.rotate(-90);}
+    50%  {.rotate(-45);}
+    100% {.rotate(0);}
+}
+
+/* Standard syntax */
+@keyframes flipIn {
+    0%   {.rotate(-90);}
+    50%  {.rotate(-45);}
+    100% {.rotate(0);}
+}
+</style>
 </html>
