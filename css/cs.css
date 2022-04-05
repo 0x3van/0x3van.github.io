@@ -63,6 +63,33 @@ body.locked {
     transition: opacity .5s linear
 }
 
+.operators {
+    opacity: 100%;
+    transition: 0.5s
+}
+
+.operators:hover {
+    transform: translateY(-30px);
+}
+.trollage {
+    opacity: 100%;
+    transition: 0.5s;
+    display: inline-block
+}
+.trollage:after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: white;
+    transition: 300ms;
+    
+}
+
+.trollage:hover:after {
+    width: 100%;
+}
+
 .wrapper:after {
     content: "";
     display: block;
