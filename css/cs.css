@@ -1925,6 +1925,12 @@ body.-desbravando-bg .std {
     background-size: 100% 100%
 }
 
+.testing {
+    animation: floatin ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 #home #Ghibli .castle .r-arm-holder {
     top: 0;
     left: 0;
@@ -2399,5 +2405,67 @@ body.-mario-easter-egg #home {
 
     #home .std .-big {
         font-size: 2rem
+    }
+}
+
+.thingg {
+    animation: flippy ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.amogus {
+    animation: flip3 ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.amogus3:hover {
+    animation: flip3 ease 1s;
+    animation-iteration-count: 1;
+    transition-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.testers {
+    animation: flippy2 ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes floatin {
+    0% {
+        transform: translateX(30px);
+    }
+}
+
+@keyframes flippy {
+    0%{
+        transform: rotateX(180deg);
+      } 
+    50% {
+        transform: rotateX(90deg);
+      }
+    100% {
+        transform: rotateX(0deg);
+      }
+    }
+
+@keyframes flippy2 {
+    0% {
+        transform: rotateY(96deg);
+        transform: rotateX(96deg);
+      }
+    80% {
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes flip3 {
+    0% {
+        transform: rotateX(96deg);
+    }
+    100% {
+        transform: rotateX(0deg);
     }
 }
