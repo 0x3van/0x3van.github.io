@@ -689,8 +689,8 @@ body.-desbravando-bg .std {
 
 .header-nav-button {
     flex: 0 0 auto;
-    width: 3rem;
-    height: 3rem;
+    width: 1px;
+    height: 2px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -765,12 +765,16 @@ body.-desbravando-bg .std {
 
 @media screen and (max-width:768px) {
     .header-nav-button {
-        transition: all 1s linear
+        transition: all 1s linear;
+        width: 1px;
+        height: 1px;
+        left: -2px;
+
     }
 
     .header-nav-close-button {
         position: absolute;
-        top: 0;
+        top: 30px;
         right: 0;
         width: 3rem;
         height: 3rem;
@@ -786,7 +790,7 @@ body.-desbravando-bg .std {
     }
 
     .header-nav-close-button:hover {
-        color: var(--light)
+        color: var(--light);
     }
 
     .header-nav {
@@ -794,10 +798,10 @@ body.-desbravando-bg .std {
         justify-content: flex-end;
         position: absolute;
         top: 0;
-        right: 0;
+        left: -64px;
         z-index: 9999;
-        width: 100vw;
-        height: 100vh;
+        width: -1px;
+        height: -160px;
         padding: 8rem 1rem 4rem;
         text-align: right;
         transition: all 1s cubic-bezier(.86, 0, .07, 1);
@@ -2544,4 +2548,39 @@ body.-mario-easter-egg #home {
     }
 }
 
+.roundy {
+    border-radius: 50%;
+    transition-duration: 0.5s;
+}
+
+.roundy:hover {
+    transform: scale(1.1);
+    background:#FFFFFF; color: #000;
+    box-shadow: 0px 0px 10px #0051ff, 0px 0px 40px #0051ff, 0px 0px 80px #0051ff; transition-delay: 0.2s;
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    border-radius: 12px;
+    visibility: visible;
+}
+
+[data-title] {
+    position: relative;
+}
+
+[data-title]:after {
+    border-radius: 12px;
+    font-family: monospace;
+}
+@media only screen and (max-width: 600px) {
+    .roundy {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .roundy:hover {
+        transform: scale(1.1);
+    }
 }
