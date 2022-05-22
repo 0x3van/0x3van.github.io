@@ -331,7 +331,7 @@ body.-desbravando-bg .std {
     width: 9px;
     height: 9px
 }
-.circle {
+div.circle {
     background-color: var(--purple);
 }
 .spine-target .circle,
