@@ -551,7 +551,7 @@
                     }
                 }, [t.viewport.is768 ? a("h1", {
                     staticClass: "title"
-                }, [t._v("\n            Curriculum"), a("br"), t._v("\n            .vitae("), a("span", {
+                }, [t._v("\n            aboutme("), a("br"), t._v("\n            .mobile("), a("span", {
                     staticClass: "params"
                 }, [t._v("'evan[#-1]'")]), t._v(")\n        ")]) : a("h1", {
                     staticClass: "title"
