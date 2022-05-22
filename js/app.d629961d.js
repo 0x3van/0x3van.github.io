@@ -702,7 +702,7 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     staticClass: "title"
                 }, [t._v("\n            code("), a("span", {
                     staticClass: "params"
-                }, [t._v("lua,python")]), t._v(")\n        ")])]), a("section", {
+                }, [t._v("lua,python")]), t._v(")\n      ")])]), a("section", {
                     staticClass: "scene",
                     attrs: {
                         id: "biz1"
@@ -1752,13 +1752,13 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     }
                 }, [t.viewport.is568 ? a("h1", {
                     staticClass: "title"
-                }, [t._v("\n            Videogames"), a("br"), t._v("\n            ("), a("span", {
+                }, [t._v("\n            videogames"), a("br"), t._v("\n            ("), a("span", {
                     staticClass: "params"
                 }, [t._v("2011,2008")]), t._v(")\n        ")]) : a("h1", {
                     staticClass: "title"
-                }, [t._v("\n            Videogames("), a("span", {
+                }, [t._v("\n            videogames("), a("span", {
                     staticClass: "params"
-                }, [t._v("wtf,sex????")]), t._v(")\n        ")]), a("div", {
+                }, [t._v(".__newindex(v,i)")]), t._v(")\n        ")]), a("div", {
                     staticClass: "std"
                 }, [a("p", {
                     staticClass: "-gray"
@@ -1890,13 +1890,13 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     staticClass: "-big"
                 }, [a("span", {
                     staticClass: "-purple"
-                }, [t._v("")]), t._v(""), a("span", {
-                    staticClass: "-purple"
+                }, [t._v(" \n\n")]), t._v("most of my code derives from my initial experiences with bughunting. \n  "), a("span", {
+                    staticClass: ""
                 }, [t._v("")]), a("br"), a("span", {
                     staticClass: "-purple"
                 }, [t._v("")]), t._v(""), a("span", {
                     staticClass: "-purple"
-                }, [t._v("")])]), a("p", [t._v("\n                    \n                    "), a("b", {
+                }, [t._v("I've been developing ROBLOX exploits and investigating vulnerabilities on the website aswell.")])]), a("p", [t._v("\n                    \n                    "), a("b", {
                     staticClass: "-purple"
                 }, [t._v("+")]), t._v(" sidenote to viewers: im a bit of an edgelord piece of shit myself "), a("b", {
                     staticClass: "-purple"
@@ -1915,8 +1915,8 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                 }, [a("div", {
                     staticClass: "std"
                 }, [a("p", [t._v("\n                   "), a("br"), t._v("\n                    \n                    "), a("span", {
-                    staticClass: "-big -purple"
-                }, [a("i", [t._v("")]), t._v("second()"), a("i", [t._v("")]), t._v(""), a("i", [t._v("")])]), t._v("\n                    \n                ")])])])])
+                    staticClass: "-big"
+                }, [a("i", [t._v("")]), t._v("after learning lua and python, i began learning"), a("i", [t._v(" Typescript,")]), t._v(""), a("span", [t._v(" from tsc, constructor classes to transpilation, i learnt javascript in the process.")])]), t._v("\n                    \n                ")])])])])
             }],
             at = {
                 props: {
@@ -2057,7 +2057,7 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     staticClass: "std"
                 }, [a("p", [t._v("\n                    Before actually learning JS/TS and doing all this stupid shit, I was\n                    "), a("span", {
                     staticClass: "-big -purple"
-                }, [t._v("\n                        very keen on Lua, specifically metatable management (__index, metamethods etc), Python's requests library and how i can ruin someone's day with said skillsets\n                    ")]), t._v("\n                    \n                ")])])]), a("div", {
+                }, [t._v("\n                        very keen on Lua, specifically LuaU and its vulnerabilities, from metatable injection to beyond. \n                    ")]), t._v("\n                    \n                ")])])]), a("div", {
                     staticClass: "container"
                 }, [a("div", {
                     staticClass: "sky"
@@ -2160,9 +2160,9 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     staticClass: "std"
                 }, [a("p", {
                     staticClass: "-big"
-                }, [t._v("\n                    once i got into js/typescript"), a("br"), t._v("\n                    i realized: \n "), a("span", {
+                }, [t._v("\n                    once i got into js/typescript"), a("br"), t._v("\n                    i began working on: \n "), a("span", {
                     staticClass: "-purple"
-                }, [t._v("doing all of this effortless shit was a fucking mistake,")])]), a("p", [t._v("\n                    as turns out i can do any of these in lua thanks to luarocks (fuck you luarcoks)\n                                    ")])])])]), a("section", {
+                }, [t._v("taking a deep dive on web security, from basic sanitization to more.")])]), a("p", [t._v("\n                    update: luarocks on top\n                                    ")])])])]), a("section", {
                     staticClass: "scene",
                     attrs: {
                         id: "Ghibli4"
@@ -2327,7 +2327,7 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     }
                 })])]), t._m(2), t._m(3), t._m(4), t._m(5), t._m(6), t._m(7), t._m(8)])])]), t._m(9), a("p", {
                     staticClass: "-big"
-                }, [t._v("\n                Check out my\n                "), a("router-link", {
+                }, [t._v("\n                check out my github\n                "), a("router-link", {
                     staticClass: "-purple",
                     attrs: {
                         to: "/work",
@@ -2448,9 +2448,9 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                 var t = this,
                     e = t.$createElement,
                     a = t._self._c || e;
-                return a("p", [t._v("\n                Thanks for checking my website!"), a("br"), a("span", {
+                return a("p", [t._v("\n                placeholder.bmp"), a("br"), a("span", {
                     staticClass: "-comment"
-                }, [t._v("// It's a work in progress so check back often!")])])
+                }, [t._v("// P.S. konami code")])])
             }],
             Mt = {
                 name: "Thanks"
@@ -2601,10 +2601,10 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                             this.rhythm = 1, l.style.display = "none", c.style.display = "none", d.style.display = "none", u.style.display = "none", p.style.display = "", h = "https://open.spotify.com/track/32bJv8V2Xgi5mtxdPcsi8B?si=enqG9uk2Q6SYhhAZtRimGQ";
                             break;
                         case 3:
-                            this.rhythm = .2, h = "https://open.spotify.com/track/1pYBTRBbp3PCcdqoke2QSN?si=IMrSO7bhTJCrLgdvwj46xQ";
+                            this.rhythm = .2, h = "https://open.spotify.com/playlist/37i9dQZF1DWWY64wDtewQt";
                             break;
                         case 4:
-                            this.rhythm = .3, h = "https://open.spotify.com/track/2oPoWNzWrFonvqrkZtmX52?si=jgc8oNB_Qdqx1vnU0gKnLA";
+                            this.rhythm = .3, h = "https://open.spotify.com/album/5L0vaNLbzgP8RIJqs1zamE?highlight=spotify:track:648BMGrt98kUbLo24A4vgj";
                             break
                     }
                     document.querySelector(".dino-head").addEventListener("click", (function () {
