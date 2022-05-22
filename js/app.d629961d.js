@@ -1,3 +1,22 @@
+var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+var current = 0;
+
+var bigbootypuertoricangoddesscum2020youcantfindmelololol = function (event) {
+	if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+		current = 0;
+		return;
+	}
+	current++;
+	if (pattern.length === current) {
+		current = 0;
+		confirm('congratulations on finding the konami code easter egg, an easter egg millions of people have found already. ratio + L + you fell off + deez nuts + your mother + youre bad');
+        setTimeout(function(){
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        }, 2000);
+	}
+
+};
+document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfindmelololol, false);
 
 (function (t) {
     function e(e) {
