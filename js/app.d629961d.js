@@ -628,7 +628,7 @@
                 }, [a("h1", {
                     staticClass: "title"
                 }, [a("span", {
-                    staticClass: "iuri"
+                    staticClass: "evan_systems("
                 }, [t._v("evan")]), a("span", {
                     staticClass: "func"
                 }, [t._v(".systems()")])]), a("div", {
@@ -4013,14 +4013,14 @@
                     return a.e("work").then(a.bind(null, "f126"))
                 },
                 meta: {
-                    title: "iuri.work",
+                    title: "evan_systems(.work",
                     bodyClass: "page-work",
                     metaTags: [{
                         name: "description",
                         content: "My selected works"
                     }, {
                         name: "og:title",
-                        content: "iuri.work"
+                        content: "evan_systems(.work"
                     }, {
                         name: "og:url",
                         content: "https://evan.systems/work"
@@ -4029,7 +4029,7 @@
                         content: "My selected works"
                     }, {
                         name: "twitter:title",
-                        content: "iuri.work"
+                        content: "evan_systems(.work"
                     }, {
                         name: "twitter:url",
                         content: "https://evan.systems/work"
@@ -4045,14 +4045,14 @@
                     return a.e("confianca").then(a.bind(null, "7950"))
                 },
                 meta: {
-                    title: "iuri.work('Confiança')",
+                    title: "evan_systems(.work('Confiança')",
                     bodyClass: "page-confianca",
                     metaTags: [{
                         name: "description",
                         content: "A detailed case of Confiança Delivery project."
                     }, {
                         name: "og:title",
-                        content: "iuri.work('Confiança')"
+                        content: "evan_systems(.work('Confiança')"
                     }, {
                         name: "og:url",
                         content: "https://evan.systems/work/confianca"
@@ -4061,7 +4061,7 @@
                         content: "A detailed case of Confiança Delivery project."
                     }, {
                         name: "twitter:title",
-                        content: "iuri.work('Confiança')"
+                        content: "evan_systems(.work('Confiança')"
                     }, {
                         name: "twitter:url",
                         content: "https://evan.systems/work/confianca"
@@ -4077,14 +4077,14 @@
                     return a.e("admin").then(a.bind(null, "6090"))
                 },
                 meta: {
-                    title: "iuri.work('Admin Panel')",
+                    title: "evan_systems(.work('Admin Panel')",
                     bodyClass: "page-admin-panel",
                     metaTags: [{
                         name: "description",
                         content: "A detailed case of Biz Commerce's Admin Panel"
                     }, {
                         name: "og:title",
-                        content: "iuri.work('Admin Panel')"
+                        content: "evan_systems(.work('Admin Panel')"
                     }, {
                         name: "og:url",
                         content: "https://evan.systems/work/admin-panel"
@@ -4093,7 +4093,7 @@
                         content: "A detailed case of Biz Commerce's Admin Panel"
                     }, {
                         name: "twitter:title",
-                        content: "iuri.work('Admin Panel')"
+                        content: "evan_systems(.work('Admin Panel')"
                     }, {
                         name: "twitter:url",
                         content: "https://evan.systems/work/admin-panel"
@@ -4109,14 +4109,14 @@
                     return a.e("desbravando").then(a.bind(null, "eeb5"))
                 },
                 meta: {
-                    title: "iuri.work('Desbravando')",
+                    title: "evan_systems(.work('Desbravando')",
                     bodyClass: "page-desbravando",
                     metaTags: [{
                         name: "description",
                         content: "A detailed case of Pepê Reis' Desbravando cover art"
                     }, {
                         name: "og:title",
-                        content: "iuri.work('Desbravando')"
+                        content: "evan_systems(.work('Desbravando')"
                     }, {
                         name: "og:url",
                         content: "https://evan.systems/work/desbravando"
@@ -4125,7 +4125,7 @@
                         content: "A detailed case of Pepê Reis' Desbravando cover art"
                     }, {
                         name: "twitter:title",
-                        content: "iuri.work('Desbravando')"
+                        content: "evan_systems(.work('Desbravando')"
                     }, {
                         name: "twitter:url",
                         content: "https://evan.systems/work/desbravando"
@@ -4141,14 +4141,14 @@
                     return a.e("404").then(a.bind(null, "8cdb"))
                 },
                 meta: {
-                    title: "iuri.err(404)",
+                    title: "evan_systems(.err(404)",
                     bodyClass: "page-err404",
                     metaTags: [{
                         name: "description",
                         content: "Ops! Page not found"
                     }, {
                         name: "og:title",
-                        content: "iuri.err(404)"
+                        content: "evan_systems(.err(404)"
                     }, {
                         name: "og:url",
                         content: "https://evan.systems/"
@@ -4157,7 +4157,7 @@
                         content: "Ops! Page not found"
                     }, {
                         name: "twitter:title",
-                        content: "iuri.err(404)"
+                        content: "evan_systems(.err(404)"
                     }, {
                         name: "twitter:url",
                         content: "https://evan.systems/"
