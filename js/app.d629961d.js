@@ -1754,11 +1754,11 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     staticClass: "title"
                 }, [t._v("\n            videogames"), a("br"), t._v("\n            ("), a("span", {
                     staticClass: "params"
-                }, [t._v("2011,2008")]), t._v(")\n        ")]) : a("h1", {
+                }, [t._v(".Instance.new()")]), t._v(")\n        ")]) : a("h1", {
                     staticClass: "title"
                 }, [t._v("\n            videogames("), a("span", {
                     staticClass: "params"
-                }, [t._v(".__newindex(v,i)")]), t._v(")\n        ")]), a("div", {
+                }, [t._v(".Instance.new()")]), t._v(")\n        ")]), a("div", {
                     staticClass: "std"
                 }, [a("p", {
                     staticClass: "-gray"
