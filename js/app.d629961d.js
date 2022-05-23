@@ -1754,7 +1754,7 @@ document.addEventListener('keydown', bigbootypuertoricangoddesscum2020youcantfin
                     staticClass: "title"
                 }, [t._v("\n            videogames"), a("br"), t._v("\n            ("), a("span", {
                     staticClass: "params"
-                }, [t._v(".Instance.new()")]), t._v(")\n        ")]) : a("h1", {
+                }, [t._v("Instance.new()")]), t._v(")\n        ")]) : a("h1", {
                     staticClass: "title"
                 }, [t._v("\n            videogames("), a("span", {
                     staticClass: "params"
