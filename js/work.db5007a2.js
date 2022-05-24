@@ -1,7 +1,7 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([
     ["work"], {
         "27d9": function (t, e, a) {
-            t.exports = a.p + "img/blue.png"
+            t.exports = a.p + "img/p logo.png"
         },
         "41ab": function (t, e, a) {
             t.exports = a.p + "img/encretard_white.png"
@@ -62,7 +62,7 @@
                         }
                     }), n("div", {
                         staticClass: "details"
-                    }, [n("strong", [t._v("Cumware")]), n("br"), n("span", {
+                    }, [n("strong", [t._v("pwnmap")]), n("br"), n("span", {
                         staticClass: "-comment"
                     }, [t._v("// OSINT framework")]), n("br"), t._v("\n                           an OSINT framework that exercises total control over manipulating data and allows easy scraping and insight in data security through leaked database scraping.\n                        ")])])], 1), n("li", [n("router-link", {
                         attrs: {
