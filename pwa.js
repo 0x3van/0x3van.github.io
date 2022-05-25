@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
   } 
 
   var urlsToCache = [
-    '/',
+    '/index.html',
     '/css/app.ea157e18.css',
     '/js/app.d629961d.js'
   ];
