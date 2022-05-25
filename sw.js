@@ -1,26 +1,24 @@
-// Change this to your repository name
-var GHPATH = '/evannnns.github.io';
- 
-// Choose a different app prefix name
-var APP_PREFIX = 'epwa';
- 
-// The version of the cache. Every time you change any of the files
-// you need to change this version (version_01, version_02…). 
-// If you don't change the version, the service worker will give your
-// users the old files!
-var VERSION = 'version_00';
- 
-// The files to make available for offline use. make sure to add 
-// others to this list
+var GHPATH = '/0x3van.github.io';
+var APP_PREFIX = 'epwa_';
+var VERSION = 'version_002';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
   `${GHPATH}/css/app.ea157e18.css`,
-  `${GHPATH}/js/app.d629961d.js`,
+  `${GHPATH}/css/404.1d2c4aa3.css`,
+  `${GHPATH}/css/about.9c65333d.css`,
+  `${GHPATH}/css/admin.d19cd596.css`,
   `${GHPATH}/css/work.5187ca25.css`,
-  `${GHPATH}/img/`,
-]
+  `${GHPATH}/img/encretard_white.png`,
+  `${GHPATH}/img/gc.jpg`,
+  `${GHPATH}/img/blue.png`,
+  `${GHPATH}/img/c.png`,
+  `${GHPATH}/img/bg-mario.55940065.png`,
+  `${GHPATH}/img/iuri-de-paula.16d3bf63.png`,
+  `${GHPATH}/js/app.d629961d.js`,
+  `${GHPATH}/js/`
 
+]
 
 var CACHE_NAME = APP_PREFIX + VERSION
 self.addEventListener('fetch', function (e) {
