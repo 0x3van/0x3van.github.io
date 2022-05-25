@@ -42,13 +42,12 @@
     <script src="pwa.js"></script>
     <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
     <script>
-      self.addEventListener('fetch', function(event) {
-       event.respondWith(
-           caches.match(event.request).then(function(response) {
-               return response || fetch(event.request);
-           })
-       );
-     });
+     if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          'sw.js',
+          {scope: '/evannnns.github.io/'}
+        )
+      }
          </script>
 </head>
 
