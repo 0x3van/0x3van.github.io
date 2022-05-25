@@ -1,7 +1,7 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([
     ["work"], {
         "27d9": function (t, e, a) {
-            t.exports = a.p + "img/Screenshot-2021-10-22-at-09.18.13.png"
+            t.exports = a.p + "img/p logo.png"
         },
         "41ab": function (t, e, a) {
             t.exports = a.p + "img/encretard_white.png"
@@ -51,20 +51,20 @@
                         staticClass: "-comment"
                     }, [t._v("// indev")]), n("br"), t._v("\n                            a bot that calculates the amount of time you spend on a google classroom task.\n                        ")])])], 1), n("li", [n("router-link", {
                         attrs: {
-                            to: "/nft",
-                            title: "screenshot simulator",
+                            to: "/coom",
+                            title: "not illegal ong ",
                             target: "_blank"
                         }
                     }, [n("img", {
                         attrs: {
                             src: a("27d9"),
-                            alt: "sexy screenshot simulator"
+                            alt: "not illegal i swear "
                         }
                     }), n("div", {
                         staticClass: "details"
-                    }, [n("strong", [t._v("NFT Screenshot.lua")]), n("br"), n("span", {
+                    }, [n("strong", [t._v("pwnmap")]), n("br"), n("span", {
                         staticClass: "-comment"
-                    }, [t._v("// just stole ya nft cry about it bozo")]), n("br"), t._v("\n                            a lua script that scrapes NFTs off of opensea\n                        ")])])], 1), n("li", [n("router-link", {
+                    }, [t._v("// OSINT framework")]), n("br"), t._v("\n                           an OSINT framework that exercises total control over manipulating data and allows easy scraping and insight in data security through leaked database scraping.\n                        ")])])], 1), n("li", [n("router-link", {
                         attrs: {
                             to: "/enc",
                             title: "encyclopedia retardica vs encyclopedia parodica???",
