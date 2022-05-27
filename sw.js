@@ -61,3 +61,10 @@ self.addEventListener('activate', function (e) {
     })
   )
 })
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register (
+    'sw.js',
+    {scope: '/0x3van.github.io/'}
+  )
+}
