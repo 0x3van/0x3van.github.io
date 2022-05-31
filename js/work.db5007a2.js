@@ -4,11 +4,11 @@
             t.exports = a.p + "img/p logo.png"
         },
         "41ab": function (t, e, a) {
-            t.exports = a.p + "img/encretard_white.png"
+            t.exports = a.p + "img/hellsecs.png"
         },
         dbb4: function (t, e, a) {},
         eefd: function (t, e, a) {
-            t.exports = a.p + "img/gc.jpg"
+            t.exports = a.p + "img/gcspeedrunbot.png"
         },
         f126: function (t, e, a) {
             "use strict";
@@ -43,7 +43,7 @@
                     }, [n("img", {
                         attrs: {
                             src: a("eefd"),
-                            alt: "a bot that calculates the amount of time you spend on a google classroom task."
+                            alt: "a program written in Lua that calculates the amount of time you spend on a google classroom task."
                         }
                     }), n("div", {
                         staticClass: "details"
@@ -64,10 +64,10 @@
                         staticClass: "details"
                     }, [n("strong", [t._v("pwnmap")]), n("br"), n("span", {
                         staticClass: "-comment"
-                    }, [t._v("// OSINT framework")]), n("br"), t._v("\n                           an OSINT framework that exercises total control over manipulating data and allows easy scraping and insight in data security through leaked database scraping.\n                        ")])])], 1), n("li", [n("router-link", {
+                    }, [t._v("// OSINT framework")]), n("br"), t._v("\n                           an OSINT framework written in Python that exercises total control over manipulating data and allows easy scraping and insight in data security through leaked database scraping.\n                        ")])])], 1), n("li", [n("router-link", {
                         attrs: {
-                            to: "/enc",
-                            title: "encyclopedia retardica vs encyclopedia parodica???",
+                            to: "/hellsecure",
+                            title: "obfuscator stuff thingmabob omegalul noway?????",
                             target: "_blank"
                         }
                     }, [n("img", {
@@ -77,9 +77,9 @@
                         }
                     }), n("div", {
                         staticClass: "details"
-                    }, [n("strong", [t._v("Encyclopedia Retardica")]), n("br"), n("span", {
+                    }, [n("strong", [t._v("Hellsecure v2")]), n("br"), n("span", {
                         staticClass: "-comment"
-                    }, [t._v("// a great invention indeed by kcis.xyz and trollface security")]), n("br"), t._v("\n                            documenting the worst.\n                        ")])])], 1)])])])])
+                    }, [t._v("// a Lua obfuscator.")]), n("br"), t._v("\n                            Slow your competitors trying to crack your script down with dark humour, mutational code and more trolling.\n                        ")])])], 1)])])])])
                 },
                 s = [],
                 i = (a("dbb4"), {
