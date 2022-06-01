@@ -11,7 +11,7 @@ const LEFT = 'L';
 const DOWN = 'D';
 const BOTTOM = 'B';
 const SHAPES = [15, 78, 102, 108, 198, 226, 232];
-const COLORS = ['#FFD836','#f58d41','#b565f3','#f54c95','#427EFF','#7ce634','#4ceae7'];
+const COLORS = ['#00ffbb','#f58d41','#b565f3','#f54c95','#427EFF','#7ce634','#4ceae7'];
 
 var autoSwitch = true;
 
@@ -77,7 +77,7 @@ class Main {
 	}
 
 	static initSettings() {
-		var message = 'You will can change settings once your current game has been finished';
+		var message = 'finish the game first to change settings idiot';
 		$('#container .tab-content .auto-switch a').click(function(e) {
 			e.preventDefault();
 			if (Board.playing) {

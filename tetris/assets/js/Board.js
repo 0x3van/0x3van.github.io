@@ -1,6 +1,4 @@
-
 class Board {
-
 
 	constructor(current = false) {
 		this.element = $('<div/>').addClass('board');
@@ -33,7 +31,6 @@ class Board {
 		Main.message('SHIT TETRIS');
 	}
 
-	
 	static start() {
 		Board.finish();
 		Board.state = 0;
@@ -56,7 +53,6 @@ class Board {
 	}
 
 
-
 	static pause() {
 		if (!Board.playing) return;
 		Board.paused = Board.tetrimino.pause();
@@ -65,7 +61,6 @@ class Board {
 		Main.pauseButton.text(Board.paused ? 'RESUME' : 'PAUSE');
 		Main.accordion(Board.paused);
 	}
-
 
 	static move(direction) {
 		if (!Board.paused && Board.playing) {
@@ -79,12 +74,10 @@ class Board {
 		}
 	}
 
-	
 	static rotate() {
 		if (!Board.paused && Board.playing)
 			Board.tetrimino.rotate();
 	}
-
 
 	static switch() {
 		if (Board.paused || !Board.playing) return;
@@ -118,7 +111,6 @@ class Board {
 		return false;
 	}
 
-
 	static add() {
 		Board.updateDelay();
 		Board.tetrimino = Board.next;
@@ -142,7 +134,6 @@ class Board {
 		}
 	}
 
-	
 	static updateDelay() {
 		if (Board.delay > 10) {
 			Board.delay = Math.floor(Board.delay*0.97);
@@ -171,7 +162,6 @@ class Board {
 		}
 	}
 
-	
 	static stack() {
 		let cleared;
 		let lines = 0;
@@ -211,6 +201,7 @@ class Board {
 			points *= Math.floor(Board.multiplier);
 			Board.score += points;
 			Board.updateScore();
+
 			Board.lastCleared = Board.current;
 		}
 		Board.add();
@@ -221,17 +212,14 @@ class Board {
 		if (Board.tetrimino) Board.tetrimino.undo();
 	}
 
-	
 	static getCells() {
 		return Board.boards[Board.current].cells;
 	}
 
-	
 	static getBoard() {
 		return Board.boards[Board.current].element;
 	}
 
-	
 	static isFilled(position) {
 		return position.col < 0 || position.col >= COLS || position.row >= ROWS ||
 			(position.row >= 0 && Board.getCells()[position.col][position.row] !== false);
@@ -252,7 +240,6 @@ class Board {
 		}
 	}
 
-	
 	static updateScore() {
 		let score = parseInt(Board.scoreboard.text()) + 5;
 		let mult = Board.multiplier > 1 ? '<span>x'+Board.multiplier.toFixed(2)+'</span>':'';
@@ -262,7 +249,6 @@ class Board {
 			Board.scoreboard.dequeue().html(score+mult).delay(15).queue(Board.updateScore);
 		}
 	}
-
 
 	static updateLevel() {
 		Board.levelboard.text('LEVEL '+Board.level);
@@ -274,7 +260,7 @@ class Board {
 		Board.tetrimino.finish();
 		Board.playing = false;
 		Board.container.find('.combo').removeClass('combo');
-		Main.message('GAME OVER BOZO');
+		Main.message('GAME OVER');
 		Main.accordion(true);
 		Main.startButton.text('NEW GAME');
 	}
