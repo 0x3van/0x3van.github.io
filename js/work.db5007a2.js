@@ -8,7 +8,7 @@
         },
         dbb4: function (t, e, a) {},
         eefd: function (t, e, a) {
-            t.exports = a.p + "img/gcspeedrunbot.png"
+            t.exports = a.p + "img/deorean.png"
         },
         f126: function (t, e, a) {
             "use strict";
@@ -36,20 +36,20 @@
                         staticClass: "work-list"
                     }, [n("li", [n("router-link", {
                         attrs: {
-                            to: "/gcspeedrun",
-                            title: "GCSpeedrunBot",
+                            to: "/delorean",
+                            title: "delorean",
                             target: "_blank"
                         }
                     }, [n("img", {
                         attrs: {
                             src: a("eefd"),
-                            alt: "a program written in Lua that calculates the amount of time you spend on a google classroom task."
+                            alt: "A polymorphic webshell generator."
                         }
                     }), n("div", {
                         staticClass: "details"
-                    }, [n("strong", [t._v("GCSpeedrunBot")]), n("br"), n("span", {
+                    }, [n("strong", [t._v("Delorean")]), n("br"), n("span", {
                         staticClass: "-comment"
-                    }, [t._v("// indev")]), n("br"), t._v("\n                            a bot that calculates the amount of time you spend on a google classroom task.\n                        ")])])], 1), n("li", [n("router-link", {
+                    }, [t._v("// indev")]), n("br"), t._v("\n                            A polymorphic webshell generator.\n                        ")])])], 1), n("li", [n("router-link", {
                         attrs: {
                             to: "/coom",
                             title: "not illegal ong ",
